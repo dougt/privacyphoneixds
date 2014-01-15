@@ -1,0 +1,25 @@
+{
+  "name": "Fox Privacy",
+  "description": "Privacy Settings",
+  "developer": {
+    "name": "IXDS",
+    "url": ""
+  },
+  "launch_path": "/index.html",
+  "permissions": {
+  },
+  "icons": {
+    "30": "/icons/appicon_30.png",
+    "60": "/icons/appicon_60.png",
+    "90": "/icons/appicon_90.png",
+    "128": "/icons/appicon_128.png"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Fox Privacy",
+      "description": "Privacy Settings"
+    }
+  },
+  "default_locale": "en-US",
+  "orientation": ["portrait"]
+}

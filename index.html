@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fox Privacy</title>
+
+    <link rel="stylesheet" type="text/css" href="/shared/style/buttons.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/shared/style/switches.css"> -->
+    <link rel="stylesheet" type="text/css" href="/style/lists.css">
+    <link rel="stylesheet" type="text/css" href="/shared/style/headers.css">
+    <link rel="stylesheet" type="text/css" href="/brick/brick-0.9.1.byob.css">
+    <link rel="stylesheet" type="text/css" href="/style/main.css">
+    <link rel="stylesheet" type="text/css" href="/style/settings.css">
+
+    <link rel="import" href="/elements/settings_intro.html">
+    <link rel="import" href="/elements/topics_list.html">
+
+    <link rel="import" href="/elements/find_my_fox.html">
+    <link rel="import" href="/elements/remote_wipe.html">
+    <link rel="import" href="/elements/location_blur.html">
+    <link rel="import" href="/elements/app_permissions.html">
+    <link rel="import" href="/elements/guest_mode.html">
+    <link rel="import" href="/elements/key_exchange.html">
+    <link rel="import" href="/elements/tor.html">
+
+    <script src="/shared/js/html_imports.js"></script>
+    <script src="/brick/brick-0.9.1.byob.js"></script>
+    <script src="/shared/js/gesture_detector.js"></script>
+    <script src="/js/settings.js"></script>
+  </head>
+  <body class="settings skin-organic">
+
+    <x-deck>
+
+      <x-card>
+<!--         <section role="region">
+          <header>
+            <a href="#.welcome"><span class="icon icon-menu">menu</span></a>
+            <h1>Fox Privacy</h1>
+          </header>
+        </section>
+ -->
+        <div class="card-content welcome">
+          <h1>
+            Welcome to the Privacy Panel!
+          </h1>
+          <div class="main-image">
+            <img src="/images/fox_welcome.png" alt="">
+          </div>
+          <p>
+            The fox offers a guided tour through some essential settings. It only takes a few minutes. Promise!
+          </p>
+          <p>
+            <ul>
+              <li>
+                <a id="what-can-you-do"
+                   href="#.wizard"
+                   role="button"
+                   class="recommend">
+                  Guide me through the settings
+                </a>
+                <a id="lets-do-the-settings"
+                   href="#.settings-intro"
+                   role="button">
+                  Directly to Privacy Panel
+                </a>                
+              </li>
+            </ul>
+          </p>
+        </div>
+      </x-card>
+
+      <x-card is="settings-intro"></x-card>
+
+      <x-card>
+        <x-slidebox class="wizard">
+          <x-slides>
+            <x-slide is="find-my-fox"></x-slide>
+            <x-slide is="remote-wipe"></x-slide>
+            <x-slide is="location-blur"></x-slide>
+            <x-slide is="app-permissions"></x-slide>
+            <x-slide is="guest-mode"></x-slide>
+            <x-slide is="key-exchange"></x-slide>
+            <x-slide is="tor"></x-slide>
+
+            <x-slide>
+              <section role="region">
+                <header>
+                  <a href="#.welcome"><span class="icon icon-menu">menu</span></a>
+                  <h1>Privacy Settings Guide</h1>
+                </header>
+              </section>
+
+              <h1>Yes! You know all of firefoxe’s privacy features now!</h1>
+              <p>
+                Find more settings, statistics to your app’s activities and the possibility to change your settings in detail.
+              </p>
+              <ul>
+                <li>
+                  <a href="#.settings-intro"
+                     role="button"
+                     class="recommend">
+                    Go to the privacy panel
+                  </a>
+                </li>
+              </ul>
+            </x-slide>
+          </x-slides>
+        </x-slidebox>
+
+  <!--       <ul class="setting-navigation">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul> -->
+
+      </x-card>
+    </x-deck>
+
+  </body>
+</html>

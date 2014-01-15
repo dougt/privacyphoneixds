@@ -1,0 +1,25 @@
+{
+  "name": "Fox Privacy",
+  "package_path": "http://192.168.2.51:8080/package.zip",
+  "developer": {
+    "name": "IXDS",
+    "url": ""
+  },
+  "launch_path": "/index.html",
+  "permissions": {
+  },
+  "icons": {
+    "30": "/icons/icon30.png",
+    "60": "/icons/icon60.png",
+    "90": "/icons/icon90.png",
+    "128": "/icons/icon128.png"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Fox Privacy",
+      "description": "Privacy Settings"
+    }
+  },
+  "default_locale": "en-US",
+  "orientation": ["portrait"]
+}

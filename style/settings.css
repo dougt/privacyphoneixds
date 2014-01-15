@@ -1,0 +1,280 @@
+
+.card-content.welcome {
+    height: 100%;
+}
+
+.welcome h1 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.setting-navigation {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6rem;
+    margin: 0 2em;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+.setting-navigation li {
+    display: inline-block;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 0 0.9rem;
+    background-size: contain;
+    background-image: url("/images/checklist_inactive.png");
+}
+.setting-navigation li.on {
+    background-image: url("/images/checklist_checked.png");
+}
+.setting-navigation li.off {
+    background-image: url("/images/checklist_not_checked.png");
+}
+
+.settings x-deck {
+    position: static;
+}
+
+.main-image,
+.mode-switch,
+.setting-toggle {
+    width: 100%;
+    text-align: center;
+}
+
+.privacy-status-description {
+    height: 3em;
+    transition: all 0.2s;
+}
+.auto-mode.off .privacy-status-description.on,
+.auto-mode.on .privacy-status-description.off {
+    margin-top: -3em;
+    opacity: 0;
+}
+
+.auto-mode.off .privacy-status>h1.on,
+.auto-mode.on .privacy-status>h1.off,
+.auto-mode.off .privacy-status>.main-image .on,
+.auto-mode.on .privacy-status>.main-image .off,
+.topic.off .main-image .on,
+.topic.on .main-image .off,
+.topic.off .description.on,
+.topic.on .description.off,
+.topic.off .explanation .setting-toggle .on,
+.topic.on .explanation .setting-toggle .off {
+    display: none;
+}
+
+.privacy-status>h1 {
+    height: 3em;
+}
+
+.privacy-meter {
+    margin: 1.2em 2em;
+    text-align: center;
+}
+.privacy-meter .bed {
+    width: 92%;
+    margin: auto;
+    border: 0.12em solid #779;
+    background: linear-gradient(to right, #f60, #f90);
+    box-shadow: inset 0 0.05em 0.3em rgba(0, 0, 0, 0.5);
+    border-radius: 0.3em;
+    overflow: hidden;
+}
+.privacy-meter .bar {
+    width: 65%;
+    height: 1.2em;
+    background: linear-gradient(to right, #9f0, #6f0);
+    box-shadow: inset 0 -0.05em 0.03em rgba(0, 0, 0, 0.4);
+    border-radius: 0.1em;
+    transition: width 0.6s;
+    transition-delay: 0.2s;
+}
+.privacy-meter .label {
+    display: inline-block;
+    width: 30%;
+    margin-top: 0.5em;
+    font-size: 90%;
+}
+.privacy-meter .label.low {
+    text-align: left;
+}
+.privacy-meter .label.high {
+    text-align: right;
+}
+.auto-mode.off .privacy-meter .bar {
+    width: 2%;
+}
+
+.settings-scroll-target {
+    position: relative;
+    height: 0;
+    top: -5rem;
+}
+
+.settings-list {
+    min-height: calc(100% - 12rem);
+    padding: 0;
+    transition: opacity 0.2s;
+}
+.privacy-status {
+    border-top: 1px solid rgb(209, 211, 212);
+}
+.settings-list .button.icon-dialog {
+    width: calc(100% - 2rem);
+    margin: 1rem 1rem;
+    padding: 0;
+    overflow: hidden;
+}
+.settings-list .menu-item-long-desc {
+    height: auto;
+    margin-top: -1rem;
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    white-space: normal;
+    color: #505859;
+}
+.settings-list .menu-item-long-desc input {
+    width: 100%;
+    margin: 0.4rem 0;
+}
+.button.icon-dialog select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.6rem;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 1.7rem;
+}
+
+.settings-list .description {
+    margin-top: -0.5rem;
+    color: rgb(80, 88, 89);
+}
+.topic-top {
+    position: relative;
+    min-height: calc(100% - 1rem);    
+    background: rgb(205, 227, 227);
+}
+.topic-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 0.1rem solid #E6E6E3;
+}
+.topic-details .main-image {
+    margin-top: -6rem;
+}
+.topic-top div.description {
+    padding: 2rem 3rem;
+}
+.topic-switch {
+    padding: 1rem 3rem;
+    padding-bottom: 0.5rem;
+    background: rgb(241,241,237);
+    overflow: hidden;
+}
+.topic-switch .title {
+    line-height: 4.6rem;
+    float: left;
+}
+.setting-toggle {
+    float: right;
+    width: 6rem;
+    padding: 1rem;
+    padding-right: 0;
+    text-align: right;
+}
+.setting-toggle:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.setting-toggle div {
+    width: 5.2rem;
+    height: 2.1rem;
+    border-radius: 1rem;
+    background: #e6e6e6 url(../shared/style/switches/images/switch/background_off.png) no-repeat -3.2rem 0 / 8.3rem 2.1rem;
+    transition: background 0.2s ease, border 0.2s ease;
+}
+.topic.on .setting-toggle div {
+    background: #e6e6e6 url(../shared/style/switches/images/switch/background.png) no-repeat 0 0 / 8.3rem 2.1rem;
+}
+.topics-list li.with-icon>.menu-item {
+    margin-left: 2.6rem;
+}
+.topics-list li.with-icon>.menu-item-desc {
+    left: 5.6rem;
+}
+.topics-list li.with-icon>img {
+    position: absolute;
+    left: 0;
+    max-height: 42px;
+    top: 1rem;
+}
+.topic-details .main-image img {
+    margin-top: 6rem;
+}
+.setting.level-of-blur {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+    margin-right: -5rem;
+}
+.setting.level-of-blur .state-title,
+.setting.level-of-blur .state-description {
+    margin: 0 4rem;
+}
+.setting.level-of-blur .state-title {
+    margin-top: 2rem;
+}
+.setting.level-of-blur .state-description {
+    margin-bottom: 1rem;
+}
+.setting.level-of-blur input {
+    height: 2rem;
+    width: 74%;
+}
+.setting.level-of-blur label>span {
+    display: inline-block;
+    width: 22%;
+    margin-top: 0.5em;
+}
+/*.setting.level-of-blur .label.low {
+    text-align: left;
+}
+.setting.level-of-blur .label.high {
+    text-align: right;
+}
+*/
+
+.settings-area {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #505859;
+}
+
+.grip {
+    height: 3px;
+    background: white;
+    margin: 0.5rem 45%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+

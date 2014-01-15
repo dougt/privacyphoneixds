@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fox Privacy</title>
+    <link rel="stylesheet" type="text/css" href="/shared/style/headers.css">
+    <link rel="stylesheet" type="text/css" href="/shared/style/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/shared/style/switches.css">
+    <link rel="stylesheet" type="text/css" href="/brick/brick-0.9.1.byob.css">
+    <link rel="stylesheet" type="text/css" href="/style/main.css">
+    <link rel="stylesheet" type="text/css" href="/style/settings.css">
+
+    <script src="/shared/js/html_imports.js"></script>
+    <script src="/brick/brick-0.9.1.byob.js"></script>
+    <script src="/js/settings.js"></script>
+
+    <link rel="import" href="/elements/settings_intro.html">
+    <link rel="import" href="/elements/topics_list.html">
+
+    <link rel="import" href="/elements/app_permissions.html">
+    <link rel="import" href="/elements/location_blur.html">
+    <link rel="import" href="/elements/guest_mode.html">
+    <link rel="import" href="/elements/key_exchange.html">
+    <link rel="import" href="/elements/tor.html">
+    <link rel="import" href="/elements/find_my_fox.html">
+    <link rel="import" href="/elements/remote_wipe.html">
+
+    <link rel="import" href="/elements/about_find_my_fox.html">
+    <link rel="import" href="/elements/about_remote_wipe.html">
+    <link rel="import" href="/elements/about_location_blur.html">
+    <link rel="import" href="/elements/about_app_permissions.html">
+    <link rel="import" href="/elements/about_guest_mode.html">
+    <link rel="import" href="/elements/about_key_exchange.html">
+  </head>
+  <body class="settings auto">
+
+    <x-deck>
+      <x-card is="settings-intro"></x-card>
+      <x-card is="app-permissions"></x-card>
+      <x-card is="location-blur"></x-card>
+      <x-card is="guest-mode"></x-card>
+      <x-card is="key-exchange"></x-card>
+      <x-card is="tor"></x-card>
+
+      <x-card>
+
+        <div is="find-my-fox"></div>
+      </x-card>
+
+      <x-card is="remote-wipe"></x-card>
+    </x-deck>
+
+  </body>
+</html>
