@@ -49,11 +49,6 @@ var settings = {
 
         var setting_toggle_click = function(event){
             settings.toggle_setting(this);
-
-            var topic = settings.find_ancestor_with_class(this, "topic");
-            if (topic) {
-                settings.topic_scroll(topic);
-            }
         };
 
         for (var i = 0; i < setting_toggles.length; i++) {
