@@ -59,12 +59,12 @@
 .auto-mode.on .privacy-status>h1.off,
 .auto-mode.off .privacy-status>.main-image .on,
 .auto-mode.on .privacy-status>.main-image .off,
-.topic.off .main-image .on,
-.topic.on .main-image .off,
-.topic.off .description.on,
-.topic.on .description.off,
-.topic.off .explanation .setting-toggle .on,
-.topic.on .explanation .setting-toggle .off {
+.setting.off .main-image .on,
+.setting.on .main-image .off,
+.setting.off .description.on,
+.setting.on .description.off,
+.setting.off .explanation .setting-toggle .on,
+.setting.on .explanation .setting-toggle .off {
     display: none;
 }
 
@@ -206,7 +206,7 @@
     background: #e6e6e6 url(../shared/style/switches/images/switch/background_off.png) no-repeat -3.2rem 0 / 8.3rem 2.1rem;
     transition: background 0.2s ease, border 0.2s ease;
 }
-.topic.on .setting-toggle div {
+.setting.on .setting-toggle div {
     background: #e6e6e6 url(../shared/style/switches/images/switch/background.png) no-repeat 0 0 / 8.3rem 2.1rem;
 }
 .topics-list li.with-icon>.menu-item {

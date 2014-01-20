@@ -208,12 +208,12 @@ var settings = {
         // look for the closest element with class "setting"
         // and toggle the classes on/off on it
 
-        elem = settings.find_ancestor_with_class(elem, "setting");
+        var ancestor = settings.find_ancestor_with_class(elem, "setting");
 
-        if (elem) {
-            elem.classList.toggle("off");
-            elem.classList.toggle("on");
-            console.log(elem.className);
+        if (ancestor) {
+            ancestor.classList.toggle("off");
+            ancestor.classList.toggle("on");
+            console.log(ancestor.className);
         }
     },
 };

@@ -32,6 +32,7 @@ ul li label:not([for]) {
 }
 
 ul li > a,
+ul li > div,
 ul li > span,
 ul li > label > span {
   display: block;
