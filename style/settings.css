@@ -121,6 +121,12 @@
     padding: 0;
     transition: opacity 0.2s;
 }
+
+.settings-list ul li
+{
+    margin-left: 0;
+}
+
 .privacy-status {
     border-top: 1px solid rgb(209, 211, 212);
 }
@@ -270,11 +276,38 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
+.app-list {
+    margin-bottom: 0;
+}
 
+.app-list li {
+    overflow-y: auto;
+}
 
+.compact-actions button {
+    top: 0;
+}
 
+.compact-actions button:last-child {
+    margin-bottom: 1rem;
+}
 
+.app-list li .app-name {
+    clear: left;
+    float: left;
+    font-size: 1.6rem;
+    height: 5rem;
+    line-height: 5rem;
+}
 
-
-
-
+.app-list li span.action-icon {
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    color: transparent;
+    float: right;
+    height: 3rem;
+    margin: 1rem 0px 1rem 0;
+    padding: 0;
+    text-align: right;
+    width: 3rem;
+}
