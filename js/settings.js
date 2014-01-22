@@ -223,6 +223,12 @@ var settings = {
                 for(var i in settingsLists) {
                     var settingsList = settingsLists.item(i);
                     settingsList.classList.toggle('disabled');
+                    var isDisabled = settingsList.classList.contains('disabled');
+                    var inputElements = settingsList.getElementsByTagName('input');
+                    for(var j in inputElements) {
+                        var inputElement = inputElements.item(j);
+                        inputElement.disabled = isDisabled;
+                    }
                 }
             }
             if(!disabled) {
