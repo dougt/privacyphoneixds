@@ -227,7 +227,9 @@ var settings = {
                     var inputElements = settingsList.getElementsByTagName('input');
                     for(var j in inputElements) {
                         var inputElement = inputElements.item(j);
-                        inputElement.disabled = isDisabled;
+                        if(inputElement) {
+                            inputElement.disabled = isDisabled;
+                        }
                     }
                 }
             }
