@@ -31,6 +31,16 @@ ul li label:not([for]) {
   background: none;
 }
 
+ul li > * {
+  margin: 0 1.5rem;
+  /*padding: 0 3rem;*/
+}
+
+ul li ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 ul li > a,
 ul li > div,
 ul li > span,
@@ -43,8 +53,6 @@ ul li > label > span {
   height: 6rem;
   font-size: 1.9rem;
   line-height: 6rem;
-  padding: 0 3rem;
-  margin: 0 -1.5rem;
 }
 
 ul li > ul li > a,
@@ -106,11 +114,6 @@ ul li > *, ul li > label > * {
 
 /* sublines */
 ul li > small, ul li > label > small {
-  position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  top: 50%;
-  padding-top: 0.4rem;
   font-size: 1.4rem;
   color: #505859;
   /* click/tap events should be caught by the <a> element below the <small> */
