@@ -1,3 +1,4 @@
+var foxPrivacyApp = foxPrivacyApp || {};
 
 var settings = {
     init: function() {
@@ -43,8 +44,9 @@ var settings = {
             }
 
             settings.slidebox.slideTo(next_slide_index);
+                        
         });
-
+        
         var setting_toggles = document.querySelectorAll(".setting-toggle");
 
         var setting_toggle_click = function(event){
@@ -54,6 +56,7 @@ var settings = {
         for (var i = 0; i < setting_toggles.length; i++) {
             setting_toggles[i].addEventListener('click', setting_toggle_click);
         }
+
     },
 
     real_offset: function(element, container) {
@@ -69,7 +72,7 @@ var settings = {
             left: left
         };
     },
-
+    
     is_topic_info_mode: function(topic) {
         var scroll_target = topic.querySelector(".settings-scroll-target");
         scroll_target_offset = settings.real_offset(scroll_target, topic);
@@ -220,4 +223,11 @@ document.addEventListener('DOMComponentsLoaded', function() {
     });
 });
 
-document.addEventListener('HtmlImportsDone', settings.init);
+document.addEventListener('HtmlImportsDone', function() {
+    foxPrivacyApp.insertAppList(function() {
+        var e = new Event('AppListDone');
+        document.dispatchEvent(e);
+    });
+});
+
+document.addEventListener('AppListDone', settings.init);

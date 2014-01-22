@@ -136,7 +136,7 @@
     padding: 0;
     overflow: hidden;
 }
-.settings-list .menu-item-long-desc {
+.menu-item-long-desc {
     height: auto;
     margin-top: -1rem;
     padding-bottom: 1rem;
@@ -145,7 +145,8 @@
     white-space: normal;
     color: #505859;
 }
-.settings-list .menu-item-long-desc input {
+
+.menu-item-long-desc input {
     width: 100%;
     margin: 0.4rem 0;
 }
@@ -284,12 +285,8 @@
     overflow-y: auto;
 }
 
-.compact-actions button {
-    top: 0;
-}
-
-.compact-actions button:last-child {
-    margin-bottom: 1rem;
+.spacing-top > .menu-item {
+    margin-top: 1em;
 }
 
 .app-list li .app-name {

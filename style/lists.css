@@ -47,6 +47,17 @@ ul li > label > span {
   margin: 0 -1.5rem;
 }
 
+ul li > ul li > a,
+ul li > ul li > div,
+ul li > ul li > span,
+ul li > ul li > label > span {
+  margin-right: -3rem;
+}
+
+ul li > ul li {
+  overflow-x: hidden;
+}
+
 ul li.active a,
 ul li.active span,
 ul li:not([aria-disabled="true"]) > small + a:active,
