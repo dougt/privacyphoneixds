@@ -59,13 +59,17 @@
 .auto-mode.on .privacy-status>h1.off,
 .auto-mode.off .privacy-status>.main-image .on,
 .auto-mode.on .privacy-status>.main-image .off,
-.topic.off .main-image .on,
-.topic.on .main-image .off,
-.topic.off .description.on,
-.topic.on .description.off,
-.topic.off .explanation .setting-toggle .on,
-.topic.on .explanation .setting-toggle .off {
+.setting.off .main-image .on,
+.setting.on .main-image .off,
+.setting.off .description.on,
+.setting.on .description.off,
+.setting.off .explanation .setting-toggle .on,
+.setting.on .explanation .setting-toggle .off {
     display: none;
+}
+
+.setting.off ~ .settings-list {
+    opacity: .5;
 }
 
 .privacy-status>h1 {
@@ -121,6 +125,12 @@
     padding: 0;
     transition: opacity 0.2s;
 }
+
+.settings-list ul li
+{
+    margin-left: 0;
+}
+
 .privacy-status {
     border-top: 1px solid rgb(209, 211, 212);
 }
@@ -130,7 +140,7 @@
     padding: 0;
     overflow: hidden;
 }
-.settings-list .menu-item-long-desc {
+.menu-item-long-desc {
     height: auto;
     margin-top: -1rem;
     padding-bottom: 1rem;
@@ -139,7 +149,8 @@
     white-space: normal;
     color: #505859;
 }
-.settings-list .menu-item-long-desc input {
+
+.menu-item-long-desc input {
     width: 100%;
     margin: 0.4rem 0;
 }
@@ -206,7 +217,7 @@
     background: #e6e6e6 url(../shared/style/switches/images/switch/background_off.png) no-repeat -3.2rem 0 / 8.3rem 2.1rem;
     transition: background 0.2s ease, border 0.2s ease;
 }
-.topic.on .setting-toggle div {
+.setting.on .setting-toggle div {
     background: #e6e6e6 url(../shared/style/switches/images/switch/background.png) no-repeat 0 0 / 8.3rem 2.1rem;
 }
 .topics-list li.with-icon>.menu-item {
@@ -270,11 +281,34 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
+.app-list {
+    margin-bottom: 0;
+}
 
+.app-list li {
+    overflow-y: auto;
+}
 
+.spacing-top > .menu-item {
+    margin-top: 1em;
+}
 
+.app-list li .app-name {
+    clear: left;
+    float: left;
+    font-size: 1.6rem;
+    height: 5rem;
+    line-height: 5rem;
+}
 
-
-
-
-
+.app-list li span.action-icon {
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    color: transparent;
+    float: right;
+    height: 3rem;
+    margin: 1rem 0px 1rem 0;
+    padding: 0;
+    text-align: right;
+    width: 3rem;
+}

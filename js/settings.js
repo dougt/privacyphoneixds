@@ -1,3 +1,4 @@
+var foxPrivacyApp = foxPrivacyApp || {};
 
 var settings = {
     init: function() {
@@ -43,22 +44,19 @@ var settings = {
             }
 
             settings.slidebox.slideTo(next_slide_index);
+                        
         });
-
+        
         var setting_toggles = document.querySelectorAll(".setting-toggle");
 
         var setting_toggle_click = function(event){
             settings.toggle_setting(this);
-
-            var topic = settings.find_ancestor_with_class(this, "topic");
-            if (topic) {
-                settings.topic_scroll(topic);
-            }
         };
 
         for (var i = 0; i < setting_toggles.length; i++) {
             setting_toggles[i].addEventListener('click', setting_toggle_click);
         }
+
     },
 
     real_offset: function(element, container) {
@@ -74,7 +72,7 @@ var settings = {
             left: left
         };
     },
-
+    
     is_topic_info_mode: function(topic) {
         var scroll_target = topic.querySelector(".settings-scroll-target");
         scroll_target_offset = settings.real_offset(scroll_target, topic);
@@ -207,14 +205,20 @@ var settings = {
     toggle_setting: function(elem) {
         // look for the closest element with class "setting"
         // and toggle the classes on/off on it
+        
+        var ancestor = settings.find_ancestor_with_class(elem, "setting"),
+            action = elem.getAttribute('data-action'),
+            target = elem.getAttribute('data-target') || undefined,
+            value;
 
-        elem = settings.find_ancestor_with_class(elem, "setting");
-
-        if (elem) {
-            elem.classList.toggle("off");
-            elem.classList.toggle("on");
-            console.log(elem.className);
+        if (ancestor) {
+            ancestor.classList.toggle("off");
+            ancestor.classList.toggle("on");
+            value = ancestor.classList.contains('on');
         }
+
+        foxPrivacyApp.handleSetting(action, value, target);
+
     },
 };
 
@@ -225,4 +229,11 @@ document.addEventListener('DOMComponentsLoaded', function() {
     });
 });
 
-document.addEventListener('HtmlImportsDone', settings.init);
+document.addEventListener('HtmlImportsDone', function() {
+    foxPrivacyApp.insertAppList(function() {
+        var e = new Event('AppListDone');
+        document.dispatchEvent(e);
+    });
+});
+
+document.addEventListener('AppListDone', settings.init);
