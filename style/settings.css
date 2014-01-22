@@ -68,6 +68,10 @@
     display: none;
 }
 
+.settings-list.disabled {
+    opacity: .3;
+}
+
 .privacy-status>h1 {
     height: 3em;
 }

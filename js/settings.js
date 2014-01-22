@@ -132,12 +132,15 @@ var settings = {
         while (levels > 0 && !setting_found) {
             levels--;
             elem = elem.parentElement;
+            if(elem == null) {
+                return;
+            }
             setting_found = elem.classList.contains(class_name);
         }
 
         return !setting_found ? false : elem;
     },
-
+    
     get_current_slide: function() {
         for (var i = 0; i < settings.slides.length; i++) {
             var slide = settings.slides[i];
@@ -203,21 +206,35 @@ var settings = {
     },
 
     toggle_setting: function(elem) {
-        // look for the closest element with class "setting"
-        // and toggle the classes on/off on it
         
-        var ancestor = settings.find_ancestor_with_class(elem, "setting"),
+        var settingElement = settings.find_ancestor_with_class(elem, "setting"),
             action = elem.getAttribute('data-action'),
             target = elem.getAttribute('data-target') || undefined,
-            value;
+            value,
+            disabled = false;
 
-        if (ancestor) {
-            ancestor.classList.toggle("off");
-            ancestor.classList.toggle("on");
-            value = ancestor.classList.contains('on');
+        if (settingElement) {
+            var settingsList = settings.find_ancestor_with_class(settingElement, "settings-list");
+            if(settingsList) {
+                disabled = settingsList.classList.contains('disabled');
+            }
+            else {
+                var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
+                for(var i in settingsLists) {
+                    var settingsList = settingsLists.item(i);
+                    settingsList.classList.toggle('disabled');
+                }
+            }
+            if(!disabled) {
+                settingElement.classList.toggle("off");
+                settingElement.classList.toggle("on");
+            }
+            value = settingElement.classList.contains('on');
         }
 
-        foxPrivacyApp.handleSetting(action, value, target);
+        if(!disabled) {
+            foxPrivacyApp.handleSetting(action, value, target);
+        }
 
     },
 };
