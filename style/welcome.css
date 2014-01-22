@@ -1,0 +1,15 @@
+.card-content.welcome > h1,
+.card-content.welcome > p {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.card-content.welcome > .main-image {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.card-content.welcome > .actions {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}

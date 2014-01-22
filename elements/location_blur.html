@@ -39,68 +39,70 @@
 		</div>
 	    </div>
 
-	    <ul class="settings-list">
-		<li class="_level-of-blur-widget">
-		    <form id="locationBlurSettings">
-			<div class="setting level-of-blur city">
+	    <section data-type="list">
+		<ul class="settings-list">
+		    <li class="_level-of-blur-widget">
+			<form id="locationBlurSettings">
+			    <div class="setting level-of-blur city">
+				<span class="menu-item-long-desc">
+				    How precise should the location be?
+				</span>
+				<ul>
+				<label for = "LocExact">
+				    <input type = "radio"
+					   name = "radSize"
+					   id = "LocExact"
+					   value = "Exact"
+					   onclick = "locationBlurSetting(this)"
+					   checked
+					   required />
+				    Exact
+				</label>
+				<br />
+				<label for = "LocCity">
+				    <input type = "radio"
+					   name = "radSize"
+					   id = "LocCity"
+					   value = "City"
+					   onclick = "locationBlurSetting(this)"
+					   required />
+				    City
+				</label>
+				<br />
+				<label for = "LocCountry">
+				    <input type = "radio"
+					   name = "radSize"
+					   id = "LocCountry"
+					   value = "Country" 
+					   onclick = "locationBlurSetting(this)"
+					   required />
+				    Country
+				</label>
+				<br />
+				<label for = "LocRandom">
+				    <input type = "radio"
+					   name = "radSize"
+					   id = "LocRandom"
+					   value = "Random" 
+					   onclick = "locationBlurSetting(this)"
+					   required />
+				    Random</label>
+			    </div>
 			    <span class="menu-item-long-desc">
-				How precise should the location be?
+				Apps will get the centre of the city you are in, as your location. For most weather apps that is enough information.
 			    </span>
-			    <ul>
-			    <label for = "LocExact">
-				<input type = "radio"
-				       name = "radSize"
-				       id = "LocExact"
-				       value = "Exact"
-				       onclick = "locationBlurSetting(this)"
-				       checked
-				       required />
-				Exact
-			    </label>
-			    <br />
-			    <label for = "LocCity">
-				<input type = "radio"
-				       name = "radSize"
-				       id = "LocCity"
-				       value = "City"
-				       onclick = "locationBlurSetting(this)"
-				       required />
-				City
-			    </label>
-			    <br />
-			    <label for = "LocCountry">
-				<input type = "radio"
-				       name = "radSize"
-				       id = "LocCountry"
-				       value = "Country" 
-				       onclick = "locationBlurSetting(this)"
-				       required />
-				Country
-			    </label>
-			    <br />
-			    <label for = "LocRandom">
-				<input type = "radio"
-				       name = "radSize"
-				       id = "LocRandom"
-				       value = "Random" 
-				       onclick = "locationBlurSetting(this)"
-				       required />
-				Random</label>
-			</div>
-			<span class="menu-item-long-desc">
-			    Apps will get the centre of the city you are in, as your location. For most weather apps that is enough information.
+			</form>
+		    </li>
+		    <li>
+			<span class="menu-item">
+			    Manual Location
 			</span>
-		    </form>
-		</li>
-		<li>
-		    <span class="menu-item">
-			Manual Location
-		    </span>
-		    <small class="menu-item-desc">
-			Define the location you want the app to use
-		    </small>
-		</li>
-	    </ul>
+			<small class="menu-item-desc">
+			    Define the location you want the app to use
+			</small>
+		    </li>
+		</ul>
+	    </section>
 	</div>
 
     </template>
