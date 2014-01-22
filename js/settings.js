@@ -205,14 +205,20 @@ var settings = {
     toggle_setting: function(elem) {
         // look for the closest element with class "setting"
         // and toggle the classes on/off on it
-
-        var ancestor = settings.find_ancestor_with_class(elem, "setting");
+        
+        var ancestor = settings.find_ancestor_with_class(elem, "setting"),
+            action = elem.getAttribute('data-action'),
+            target = elem.getAttribute('data-target') || undefined,
+            value;
 
         if (ancestor) {
             ancestor.classList.toggle("off");
             ancestor.classList.toggle("on");
-            console.log(ancestor.className);
+            value = ancestor.classList.contains('on');
         }
+
+        foxPrivacyApp.handleSetting(action, value, target);
+
     },
 };
 
