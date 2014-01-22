@@ -60,6 +60,18 @@ section[role="region"] header h2 {
   padding-right: 1.5rem;
 }
 
+.label-text {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  height: 5rem;
+  margin-left: 5rem;
+}
+
+.vertical label {
+  display: block;
+}
+
 /******************************************************************************
  * Range inputs
  * (stolen from settings app)

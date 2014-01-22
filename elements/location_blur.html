@@ -40,15 +40,17 @@
 	    </div>
 
 	    <section data-type="list">
-		<ul class="settings-list">
+		<ul class="settings-list large">
 		    <li class="_level-of-blur-widget">
 			<form id="locationBlurSettings">
-			    <div class="setting level-of-blur city">
-				<span class="menu-item-long-desc">
+			    <div class="setting level-of-blur city vertical">
+				<p>Precision</p>
+				<p>
 				    How precise should the location be?
-				</span>
-				<ul>
-				<label for = "LocExact">
+				</p>
+				<label class="pack-radio"
+				       for = "LocExact">
+				    <span class="label-text">Exact</span>
 				    <input type = "radio"
 					   name = "radSize"
 					   id = "LocExact"
@@ -56,50 +58,54 @@
 					   onclick = "locationBlurSetting(this)"
 					   checked
 					   required />
-				    Exact
+				    <span></span>
 				</label>
-				<br />
-				<label for = "LocCity">
+				<label class="pack-radio"
+				       for = "LocCity">
+				    <span class="label-text">City</span>
 				    <input type = "radio"
 					   name = "radSize"
 					   id = "LocCity"
 					   value = "City"
 					   onclick = "locationBlurSetting(this)"
 					   required />
-				    City
+				    <span></span>
 				</label>
-				<br />
-				<label for = "LocCountry">
+				<label class="pack-radio"
+				       for = "LocCountry">
+				    <span class="label-text">Country</span>
 				    <input type = "radio"
 					   name = "radSize"
 					   id = "LocCountry"
 					   value = "Country" 
 					   onclick = "locationBlurSetting(this)"
 					   required />
-				    Country
+				    <span></span>
 				</label>
-				<br />
-				<label for = "LocRandom">
+				<label class="pack-radio"
+				       for = "LocRandom">
+				    <span class="label-text">Random</span>
 				    <input type = "radio"
 					   name = "radSize"
 					   id = "LocRandom"
 					   value = "Random" 
 					   onclick = "locationBlurSetting(this)"
 					   required />
-				    Random</label>
+				    <span></span>
+				</label>
+				<p class="after">
+				    Apps will get the centre of the city you are in as your location. For most weather apps that is enough information.
+				</p>
 			    </div>
-			    <span class="menu-item-long-desc">
-				Apps will get the centre of the city you are in, as your location. For most weather apps that is enough information.
-			    </span>
 			</form>
 		    </li>
 		    <li>
-			<span class="menu-item">
+			<p>
 			    Manual Location
-			</span>
-			<small class="menu-item-desc">
+			</p>
+			<p>
 			    Define the location you want the app to use
-			</small>
+			</p>
 		    </li>
 		</ul>
 	    </section>

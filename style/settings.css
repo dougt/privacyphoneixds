@@ -235,36 +235,6 @@
 .topic-details .main-image img {
     margin-top: 6rem;
 }
-.setting.level-of-blur {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-.setting.level-of-blur .state-title,
-.setting.level-of-blur .state-description {
-    margin: 0 4rem;
-}
-.setting.level-of-blur .state-title {
-    margin-top: 2rem;
-}
-.setting.level-of-blur .state-description {
-    margin-bottom: 1rem;
-}
-.setting.level-of-blur input {
-    height: 2rem;
-    width: 74%;
-}
-.setting.level-of-blur label>span {
-    display: inline-block;
-    width: 22%;
-    margin-top: 0.5em;
-}
-/*.setting.level-of-blur .label.low {
-    text-align: left;
-}
-.setting.level-of-blur .label.high {
-    text-align: right;
-}
-*/
 
 .settings-area {
     font-size: 1.4rem;

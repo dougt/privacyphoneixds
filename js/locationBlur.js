@@ -15,19 +15,19 @@ function locationBlurSetting(option) {
     switch (setting)
     {
 	case "Exact" :
-	    alert('Exact');
+	    console.log('Exact');
 	    break;
 	case "City" :
-	    alert('City');
+	    console.log('City');
 	    break;
 	case "Country" :
-	    alert('Country');
+	    console.log('Country');
 	    break;
 	case "Random" :
-	    alert('Random');
+	    console.log('Random');
 	    break;
 	default:
-	    alert('Exact');
+	    console.log('Exact');
 	    break;
     }; 
 }
