@@ -288,3 +288,18 @@ td {
 form[role="dialog"] {
     display: none;
 }
+
+#locationblur-locationpickersection {
+    height: calc(100% - 6.8rem);
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#locationblur-locationpicker {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}

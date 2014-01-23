@@ -13,6 +13,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	    checkboxes = locationBlurForm.getElementsByTagName('input');
 	    locationFormDialog = document.getElementById('locationblur-locationpickerdialog');
 	    this.currentValue = this.getCurrentValue();
+	    foxPrivacyApp.initLocationPicker();
 	},
 	
 	currentValue : undefined,

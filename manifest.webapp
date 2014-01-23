@@ -7,6 +7,9 @@
   },
   "launch_path": "/index.html",
   "permissions": {
+    "systemXHR": {
+      "description": "Required to display the location picker"
+    },
     "webapps-manage": {
       "description": "Required to display a list of installed applications"
     }
