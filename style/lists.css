@@ -16,8 +16,14 @@ ul {
 
 [data-type="list"] ul.large li {
   height: auto;
-  padding-bottom: 1rem;
+  overflow-y: auto;
+  padding-bottom: 0.5rem;
   padding-top: 1rem;
+}
+
+[data-type="list"] ul li.compact {
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 [data-type="list"] ul.large li p {
