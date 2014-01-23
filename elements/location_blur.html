@@ -45,9 +45,7 @@
 			<form id="locationBlurSettings">
 			    <div class="setting level-of-blur city vertical">
 				<p>Precision</p>
-				<p>
-				    How precise should the location be?
-				</p>
+				<p>How precise should the location be?</p>
 				<label class="pack-radio"
 				       for = "LocExact">
 				    <span class="label-text">Exact</span>
@@ -55,7 +53,7 @@
 					   name = "radSize"
 					   id = "LocExact"
 					   value = "Exact"
-					   onclick = "locationBlurSetting(this)"
+					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
 					   checked
 					   required />
 				    <span></span>
@@ -67,7 +65,7 @@
 					   name = "radSize"
 					   id = "LocCity"
 					   value = "City"
-					   onclick = "locationBlurSetting(this)"
+					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
 				</label>
@@ -78,7 +76,7 @@
 					   name = "radSize"
 					   id = "LocCountry"
 					   value = "Country" 
-					   onclick = "locationBlurSetting(this)"
+					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
 				</label>
@@ -89,7 +87,18 @@
 					   name = "radSize"
 					   id = "LocRandom"
 					   value = "Random" 
-					   onclick = "locationBlurSetting(this)"
+					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
+					   required />
+				    <span></span>
+				</label>
+				<label class="pack-radio"
+				       for = "LocMap">
+				    <span class="label-text">Choose location on map</span>
+				    <input type = "radio"
+					   name = "radSize"
+					   id = "LocMap"
+					   value = "Map" 
+					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
 				</label>
@@ -99,17 +108,26 @@
 			    </div>
 			</form>
 		    </li>
-		    <li>
-			<p>
-			    Manual Location
-			</p>
-			<p>
-			    Define the location you want the app to use
-			</p>
-		    </li>
 		</ul>
 	    </section>
 	</div>
 
+	<section role="region" class="fullscreen">
+	    <form role="dialog" data-type="confirm" id="locationblur-locationpickerdialog">
+		<section>
+		    <h1>
+			Manual Location
+		    </h1>
+		    <p>
+			Define the location you want the app to use
+		    </p>
+		</section>
+		<menu>
+		    <button type="button" onclick="foxPrivacyApp.locationBlur.closeLocationDialog()">Cancel</button>
+		    <button type="button" onclick="foxPrivacyApp.locationBlur.setLocation()" class="recommend">OK</button>
+		</menu>
+	    </form>	
+	</section>
+	
     </template>
 </element>

@@ -284,3 +284,7 @@
 td {
     color: #5B5B5B;
 }
+
+form[role="dialog"] {
+    display: none;
+}

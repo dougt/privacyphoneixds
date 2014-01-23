@@ -133,7 +133,7 @@ var settings = {
             levels--;
             elem = elem.parentElement;
             if(elem == null) {
-                return;
+                break;
             }
             setting_found = elem.classList.contains(class_name);
         }
@@ -255,6 +255,7 @@ document.addEventListener('DOMComponentsLoaded', function() {
 });
 
 document.addEventListener('HtmlImportsDone', function() {
+    foxPrivacyApp.locationBlur.init();
     foxPrivacyApp.insertAppList(function() {
         var e = new Event('AppListDone');
         document.dispatchEvent(e);

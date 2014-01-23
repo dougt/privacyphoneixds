@@ -68,12 +68,28 @@ section[role="region"] header h2 {
   margin-left: 5rem;
 }
 
-.full-height {
-  height: 100%;
-}
-
 .vertical label {
   display: block;
+  width: 100%;
+}
+
+.vertical label .label-text {
+  width: auto;
+}
+
+.vertical label input ~ span:after {
+  left: 2.5rem;
+}
+
+/*.vertical label.pack-radio input ~ span {
+  background-position: left top;
+  height: 5rem;
+  left: 2.5rem;
+  width: 5rem;
+}*/
+
+x-slides > x-slide {
+  position: relative;
 }
 
 /******************************************************************************
