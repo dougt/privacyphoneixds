@@ -13,7 +13,6 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	    checkboxes = locationBlurForm.getElementsByTagName('input');
 	    locationFormDialog = document.getElementById('locationblur-locationpickerdialog');
 	    this.currentValue = this.getCurrentValue();
-	    foxPrivacyApp.initLocationPicker();
 	},
 	
 	currentValue : undefined,
@@ -65,6 +64,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 		    break;
 		case "Map":
 		    locationFormDialog.style.display = "block";
+		    foxPrivacyApp.initLocationPicker();
 		    break;
 		default:
 		    console.log('Unkown value chosen');
