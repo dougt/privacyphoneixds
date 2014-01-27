@@ -3,10 +3,10 @@ var app = app || {};
 (function() {
 
     var checkboxes,
-    currentLocation,
-    currentValue,
-    locationFormDialog;
-    
+        currentLocation,
+        currentValue,
+        locationFormDialog;
+
     var getRandomLocation = function() {
         var minLat = -90,
             maxLat = 90,
@@ -21,10 +21,14 @@ var app = app || {};
     };
 
     app.locationBlur = {
-    
+
         init: function() {
             var locationBlurForm = document.querySelector('.locationBlurSettings');
             checkboxes = locationBlurForm.getElementsByTagName('input');
+            for(var i in checkboxes) {
+                var checkbox = checkboxes.item(i);
+                checkbox.addEventListener('click', app.locationBlur.setBlurLevel);
+            }
             locationFormDialog = document.getElementById('locationblur-locationpickerdialog');
             currentValue = this.getCurrentValue();
             currentLocation = getRandomLocation();
@@ -55,38 +59,49 @@ var app = app || {};
             }
         },
 
-        setBlurLevel : function(element) {
+        setBlurLevel : function(event) {
 
-            var value = element.value;
+            var value = this.value;
 
-            console.log("the setting selected is: " + value);
+            //console.log("the setting selected is: " + value);
+
+            for(var i in checkboxes) {
+                var checkbox = checkboxes.item(i);
+                var settingElement = app.settings.findAncestorWithClass(checkbox, 'setting');
+                if(checkbox && settingElement) {
+                    if(checkbox.checked && settingElement.classList.contains('off')
+                        || !checkbox.checked && settingElement.classList.contains('on')) {
+                        app.settings.toggleSetting(checkbox);
+                    }
+                }
+            }
 
             switch (value)
             {
-            case "Off" :
-                currentValue = undefined;
-                console.log('Off');
-                break;
-            case "Random" :
-                currentValue = value;
-                console.log('Random');
-                break;
-            case "Map":
-                locationFormDialog.style.display = "block";
-                app.locationPicker.init();
-                break;
-            case "Country":
-                console.log('do sth');
-                break;
-            default:
-                console.log('Unkown value chosen');
-                break;
+                case "Off" :
+                    currentValue = undefined;
+                    //console.log('Off');
+                    break;
+                case "Random" :
+                    currentValue = value;
+                    //console.log('Random');
+                    break;
+                case "Map":
+                    locationFormDialog.style.display = "block";
+                    app.locationPicker.init();
+                    break;
+                case "Country":
+                    //console.log('do sth');
+                    break;
+                default:
+                    console.log('Unkown value chosen');
+                    break;
             }
         },
 
         setCurrentLocation : function(location) {
             if(typeof location !== 'undefined') {
-            currentLocation = location;
+                currentLocation = location;
             }
         },
 
@@ -101,7 +116,7 @@ var app = app || {};
             console.log('location chosen');
             locationFormDialog.style.display = 'none';
         }
-    
+
     };
-    
+
 })();

@@ -22,23 +22,25 @@
 
       <section data-type="list" class="full-height">
         <ul class="settings-list large">
-          <li class="setting bluetooth on">
-            <div>
+          <li>
+            <div class="setting bluetooth on">
               <span class="title">
                 Passcode lock
               </span>
               <div class="setting-toggle" data-action="screenlock-togglefeature" data-target="passcode-lock"><div></div></div>
             </div>
-            <ul class="settings-list large">
-              <li class="setting">
-                <form action="" class="bottom" data-action="screenlock-password" onsubmit="app.settings.toggleSetting(this);return false;" role="search">
-                  <button type="submit">Set</button>
-                  <p>
-                    <input name="password" type="password" value="" />
-                  </p>
-                </form>
-              </li>
-            </ul>
+            <section>
+              <ul class="settings-list large">
+                <li class="setting">
+                  <form action="" class="bottom" data-action="screenlock-password" onsubmit="app.settings.toggleSetting(this);return false;" role="search">
+                    <button type="submit">Set</button>
+                    <p>
+                      <input name="password" type="password" value="" />
+                    </p>
+                  </form>
+                </li>
+              </ul>
+            </section>
           </li>
         </ul>
       </section>

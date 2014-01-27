@@ -228,42 +228,33 @@ var app = app || {};
                 disabled = false;
 
             if (settingElement) {
-                value = settingElement.classList.contains('on');
                 var parentSettingsList = app.settings.findAncestorWithClass(settingElement, "settings-list");
-                var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
-                if (settingsLists) { // Has children settings
-                    var sections = settingElement.parentElement.childNodes;
-                    for(var i in sections) {
-                        var section = sections.item(i);
-                        if(section.classList != undefined) {
+                var sections = settingElement.parentElement.childNodes;
+                for(var i in sections) {
+                    var section = sections.item(i);
+                    if(section.classList != undefined) {
+                        if(section.tagName == 'SECTION' || section.classList.contains('settings-list')) {
                             section.classList.toggle('disabled');
                         }
                     }
-                    for(var i in settingsLists) {
-                        var settingsList = settingsLists.item(i);
-                        if(settingsList !== null) {
-                            var isDisabled = settingsList.classList.contains('disabled');
-                            var inputElements = settingsList.getElementsByTagName('input');
-                            for(var j in inputElements) {
-                                var inputElement = inputElements.item(j);
-                                if(inputElement) {
-                                    inputElement.disabled = isDisabled;
-                                }
-                            }
-                        }
-                    }
-                }
-                if(section !== null) {
-                    section.classList
                 }
                 if(parentSettingsList) {
                     disabled = parentSettingsList.classList.contains('disabled');
                 }
                 if(!disabled) {
-                    if(elem.classList.contains('setting-toggle')) {
+                    if(elem.classList.contains('setting-toggle') || (elem.tagName == 'INPUT' && elem.getAttribute('type') == 'radio') ) {
                         settingElement.classList.toggle("off");
                         settingElement.classList.toggle("on");
-                        app.handleSetting(action, value, target);
+                        if(elem.classList.contains('setting-toggle')) {
+                            value = settingElement.classList.contains('on');
+                            app.handleSetting(action, value, target);
+                        }
+                        else {
+                            value = elem.value;
+                            if(elem.checked) {
+                                app.handleSetting(action, value, target);
+                            }
+                        }
                     }
                     else {
                         if(elem.tagName === 'FORM') {
