@@ -3,7 +3,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 (function() {
     
     var appListElementId = 'guest-mode-app-list',
-	appMgr = navigator.mozApps.mgmt,
+	appMgr = typeof navigator.mozApps !== 'undefined' ? navigator.mozApps.mgmt : undefined,
 	hidden_roles =  ['system', 'keyboard', 'homescreen']
 	;	
 

@@ -90,7 +90,7 @@ var settings = {
     },
     topic_settings_mode_scroll: function(topic) {
         var target = topic.querySelector(".settings-scroll-target");
-        target_offset = settings.real_offset(target, topic);
+        var target_offset = settings.real_offset(target, topic);
         topic.scrollTop = target_offset.top;
     },
 
@@ -151,10 +151,21 @@ var settings = {
     },
 
     follow_deep_link: function() {
-        var [card, slide, scroll] = window.location.hash.split('#').slice(1);
-        console.log(card);
-        console.log(slide);
-        console.log(scroll);
+        //var [card, slide, scroll] = window.location.hash.split('#').slice(1);
+        var card, slide, scroll,
+            path = window.location.hash.split('#').slice(1);
+        if(path.length > 0) {
+            card = path[0];
+            console.log(card);
+        }
+        if(path.length > 1) {
+            slide = path[1];
+            console.log(slide);
+        }
+        if(path.length > 2) {
+            scroll = path[3];
+            console.log(scroll);
+        }
 
         if (!card) { return; }
         settings.shuffle_to(card);
@@ -244,7 +255,7 @@ var settings = {
             foxPrivacyApp.handleSetting(action, value, target);
         }
 
-    },
+    }
 };
 
 document.addEventListener('DOMComponentsLoaded', function() {
