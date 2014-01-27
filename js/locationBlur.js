@@ -3,19 +3,37 @@ var foxPrivacyApp = foxPrivacyApp || {};
 (function() {
 
     var checkboxes,
+	currentLocation,
+	currentValue,
 	locationBlurForm,
 	locationFormDialog;
+    
+    var getRandomLocation = function() {
+	var minLat = -90,
+	    maxLat = 90,
+	    minLon = 0,
+	    maxLon = 180;
+	var lat = Math.random()*(maxLat - minLat) + minLat,
+	    lon = Math.random()*(maxLon - minLon) + minLon;
+	return {
+	    lat: lat,
+	    lon: lon
+	};
+    };
 
-    foxPrivacyApp.locationBlur = {
+    foxPrivacyApp.locationBlur = foxPrivacyApp.locationBlur || {
 	
 	init: function() {
 	    var locationBlurForm = document.getElementById('locationBlurSettings');
 	    checkboxes = locationBlurForm.getElementsByTagName('input');
 	    locationFormDialog = document.getElementById('locationblur-locationpickerdialog');
-	    this.currentValue = this.getCurrentValue();
+	    currentValue = this.getCurrentValue();
+	    currentLocation = getRandomLocation();
 	},
 	
-	currentValue : undefined,
+	getCurrentLocation : function() {
+	    return currentLocation;
+	},
 	
 	getCurrentValue : function() {
 	    var value;
@@ -47,24 +65,24 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	    switch (value)
 	    {
 		case "Exact" :
-		    this.currentValue = value;
+		    currentValue = value;
 		    console.log('Exact');
 		    break;
 		case "City" :
-		    this.currentValue = value;
+		    currentValue = value;
 		    console.log('City');
 		    break;
 		case "Country" :
-		    this.currentValue = value;
+		    currentValue = value;
 		    console.log('Country');
 		    break;
 		case "Random" :
-		    this.currentValue = value;
+		    currentValue = value;
 		    console.log('Random');
 		    break;
 		case "Map":
 		    locationFormDialog.style.display = "block";
-		    foxPrivacyApp.initLocationPicker();
+		    foxPrivacyApp.locationPicker.init();
 		    break;
 		default:
 		    console.log('Unkown value chosen');
@@ -72,13 +90,20 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	    }
 	},
 	
+	setCurrentLocation : function(location) {
+	    if(typeof location !== 'undefined') {
+		currentLocation = location;
+	    }
+	},
+	
 	closeLocationDialog : function() {
-	    this.setValue(this.currentValue);
+	    this.setValue(currentValue);
 	    locationFormDialog.style.display = 'none';
 	},
 	
-	setLocation : function() {
-	    this.currentValue = 'Map';
+	confirmLocation : function() {
+	    currentValue = 'Map';
+	    currentLocation = foxPrivacyApp.locationPicker.getCurrentLocation();
 	    console.log('location chosen');
 	    locationFormDialog.style.display = 'none';
 	}

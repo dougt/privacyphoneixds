@@ -2,44 +2,57 @@ var foxPrivacyApp = foxPrivacyApp || {};
 
 (function() {
     
-    foxPrivacyApp.initLocationPicker = function() {
+    var currentLocation,
+        marker;
+    
+    foxPrivacyApp.locationPicker = {
         
-        if(typeof google !== 'undefined') {
+        init : function() {
+        
+            if(typeof google !== 'undefined') {
+                
+                currentLocation = foxPrivacyApp.locationBlur.getCurrentLocation();
+                var center = typeof currentLocation !== 'undefined' ? new google.maps.LatLng(currentLocation.lat, currentLocation.lon) : new google.maps.LatLng(59.32522, 18.07002);
+                var map;
 
-            var stockholm = new google.maps.LatLng(59.32522, 18.07002);
-            var parliament = new google.maps.LatLng(59.327383, 18.06747);
-            var marker;
-            var map;
+                var mapOptions = {
+                    zoom: 1,
+                    center: center
+                };
 
-            var mapOptions = {
-                zoom: 13,
-                center: stockholm
-            };
+                map = new google.maps.Map(document.getElementById('locationblur-locationpicker'), mapOptions);
 
-            map = new google.maps.Map(document.getElementById('locationblur-locationpicker'), mapOptions);
+                marker = new google.maps.Marker({
+                    map:map,
+                    draggable:true,
+                    animation: google.maps.Animation.DROP,
+                    position: center
+                });
+                
+                var toggleBounce = function() {
 
-            marker = new google.maps.Marker({
-                map:map,
-                draggable:true,
-                animation: google.maps.Animation.DROP,
-                position: parliament
-            });
+                    if (marker.getAnimation() != null) {
+                        marker.setAnimation(null);
+                    } else {
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+                };
 
-            function toggleBounce() {
+                google.maps.event.addListener(marker, 'click', toggleBounce);
 
-                if (marker.getAnimation() != null) {
-                    marker.setAnimation(null);
-                } else {
-                    marker.setAnimation(google.maps.Animation.BOUNCE);
-                }
             }
-
-            google.maps.event.addListener(marker, 'click', toggleBounce);
-
-        }
+            
+            else {
+                console.log('It looks like the Google Maps API could not be loaded');
+            }
+        },
         
-        else {
-            console.log('It looks like the Google Maps API could not be loaded');
+        getCurrentLocation : function () {
+            var position = marker.getPosition();
+            return {
+                lat: position.lat(),
+                lon: position.lng()
+            };
         }
         
     };
