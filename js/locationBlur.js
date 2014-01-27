@@ -5,7 +5,6 @@ var foxPrivacyApp = foxPrivacyApp || {};
     var checkboxes,
 	currentLocation,
 	currentValue,
-	locationBlurForm,
 	locationFormDialog;
     
     var getRandomLocation = function() {
@@ -21,7 +20,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	};
     };
 
-    foxPrivacyApp.locationBlur = foxPrivacyApp.locationBlur || {
+    foxPrivacyApp.locationBlur = {
 	
 	init: function() {
 	    var locationBlurForm = document.getElementById('locationBlurSettings');
@@ -64,17 +63,9 @@ var foxPrivacyApp = foxPrivacyApp || {};
 
 	    switch (value)
 	    {
-		case "Exact" :
-		    currentValue = value;
-		    console.log('Exact');
-		    break;
-		case "City" :
-		    currentValue = value;
-		    console.log('City');
-		    break;
-		case "Country" :
-		    currentValue = value;
-		    console.log('Country');
+		case "Off" :
+		    currentValue = undefined;
+		    console.log('Off');
 		    break;
 		case "Random" :
 		    currentValue = value;

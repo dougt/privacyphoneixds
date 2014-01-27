@@ -47,47 +47,25 @@
 				<p>Precision</p>
 				<p>How precise should the location be?</p>
 				<label class="pack-radio"
-				       for = "LocExact">
-				    <span class="label-text">Exact</span>
+				       for = "LocOff">
+				    <span class="label-text">Turn location off</span>
 				    <input type = "radio"
 					   name = "radSize"
-					   id = "LocExact"
-					   value = "Exact"
-					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
-					   checked
-					   required />
-				    <span></span>
-				</label>
-				<label class="pack-radio"
-				       for = "LocCity">
-				    <span class="label-text">City</span>
-				    <input type = "radio"
-					   name = "radSize"
-					   id = "LocCity"
-					   value = "City"
-					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
-					   required />
-				    <span></span>
-				</label>
-				<label class="pack-radio"
-				       for = "LocCountry">
-				    <span class="label-text">Country</span>
-				    <input type = "radio"
-					   name = "radSize"
-					   id = "LocCountry"
-					   value = "Country" 
+					   id = "LocOff"
+					   value = "Off"
 					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
 				</label>
 				<label class="pack-radio"
 				       for = "LocRandom">
-				    <span class="label-text">Random</span>
+				    <span class="label-text">Use random location</span>
 				    <input type = "radio"
 					   name = "radSize"
 					   id = "LocRandom"
 					   value = "Random" 
 					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
+					   checked
 					   required />
 				    <span></span>
 				</label>

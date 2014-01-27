@@ -16,7 +16,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
                 var map;
 
                 var mapOptions = {
-                    zoom: 1,
+                    zoom: 2,
                     center: center
                 };
 
