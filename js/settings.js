@@ -163,7 +163,7 @@ var settings = {
             console.log(slide);
         }
         if(path.length > 2) {
-            scroll = path[3];
+            scroll = path[2];
             console.log(scroll);
         }
 
