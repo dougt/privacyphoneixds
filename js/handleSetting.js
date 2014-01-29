@@ -17,6 +17,23 @@ var foxPrivacyApp = foxPrivacyApp || {};
  		}
  		console.log(ListOfApps);
  	}
+ 	if(actionName == 'guestmode-toggle'){
+		console.log('In guest mode');
+		var settings = window.navigator.mozSettings;
+		console.log('window.navigator.mozSettings');
+		var req = settings.createLock().get('bluetooth.enabled');
+		/*console.log('Lock Works');*/
+		req.onsuccess = function bt_EnabledSuccess() {
+      		console.log('BT on');
+    	};
+   	 	req.onerror = function bt_EnabledOnerror() {
+     		console.log('BT off');
+   		 };
+		console.log(actionName+'FUNCTION WORKS:'+value);
+  		if (!settings) {
+   		return;
+ 		}
+ 	}
 	
 	if(typeof callback === 'function') {
 	    callback();
