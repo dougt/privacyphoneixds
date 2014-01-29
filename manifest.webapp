@@ -12,7 +12,11 @@
     },
     "webapps-manage": {
       "description": "Required to display a list of installed applications"
-    }
+    },
+    "settings":{
+      "description": "we need to change the settings",
+      "access": "readwrite"
+     }
   },
   "icons": {
     "30": "/icons/appicon_30.png",
