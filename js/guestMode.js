@@ -39,7 +39,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
             });
             if(listElements) {
                 for(var index in listElements) {
-                    var listElement = listElement.item(index);
+                    var listElement = listElements.item(index);
                     listElement.innerHTML = listHtml;
                 }
             }
