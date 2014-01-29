@@ -1,0 +1,34 @@
+<element name="settings-panel">
+  <template>
+
+      <x-deck class="settings-panel">
+          <x-card>
+              <section role="region">
+                  <header>
+                      <h1>Privacy Panel</h1>
+                  </header>
+              </section>
+
+              <div class="card-content settings-panel-list">
+                  <div class="privacy-status">
+
+                      <div class="main-image">
+                          <img src="/images/panel_infographic-19.png" alt="">
+                      </div>
+
+                  </div>
+
+                  <div is="topics-list"></div>
+              </div>
+          </x-card>
+          <x-card is="find-my-fox"></x-card>
+          <x-card is="remote-wipe"></x-card>
+          <x-card is="location-blur"></x-card>
+          <x-card is="app-permissions"></x-card>
+          <x-card is="guest-mode"></x-card>
+          <x-card is="key-exchange"></x-card>
+          <x-card is="tor"></x-card>
+      </x-deck>
+
+  </template>
+</element>

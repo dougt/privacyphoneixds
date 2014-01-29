@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <title>Fox Privacy</title>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/style/settings.css">
     <link rel="stylesheet" type="text/css" href="/style/topic-list.css">
 
-    <link rel="import" href="/elements/settings_intro.html">
+    <link rel="import" href="/elements/settings_panel.html">
     <link rel="import" href="/elements/topics_list.html">
     <link rel="import" href="/elements/find_my_fox.html">
     <link rel="import" href="/elements/remote_wipe.html">
@@ -42,7 +42,7 @@
   </head>
   <body class="settings skin-organic">
 
-    <x-deck>
+    <x-deck class="root-deck">
 
       <x-card>
 <!--         <section role="region">
@@ -72,7 +72,7 @@
                   Guide me through the settings
                 </a>
                 <a id="lets-do-the-settings"
-                   href="#.settings-intro"
+                   href="#.settings-panel"
                    role="button">
                   Directly to Privacy Panel
                 </a>                
@@ -82,7 +82,7 @@
         </div>
       </x-card>
 
-      <x-card is="settings-intro"></x-card>
+      <x-card is="settings-panel"></x-card>
 
       <x-card>
         <x-slidebox class="wizard">
@@ -109,7 +109,7 @@
               </p>
               <ul>
                 <li>
-                  <a href="#.settings-intro"
+                  <a href="#.settings-panel"
                      role="button"
                      class="recommend">
                     Go to the privacy panel
