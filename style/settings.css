@@ -280,6 +280,19 @@ form[role="dialog"] {
     display: none;
 }
 
+[data-type="list"] li form[role="search"] p:first-of-type {
+    padding: 0.4rem 1.2rem 0
+}
+
+form[role="search"] p input,
+form[role="search"] p textarea {
+    padding: 0 2rem 0 0;
+}
+
+.settings-list.large form {
+    margin-bottom: 1rem;
+}
+
 #locationblur-locationpickersection {
     height: calc(100% - 6.8rem);
     left: 0;
