@@ -1,5 +1,5 @@
 var foxPrivacyApp = foxPrivacyApp || {};
-
+var ListOfApps = new Array();
 (function() {
     /* 
      * Define actions here according to the action string that is passed as actionName and a value.
@@ -11,11 +11,19 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	console.log('value : ' + value);
 	console.log('target: ' + target);
 	
-	if((actionName == 'guestmode-togglefeature')&&(value==false)){
- 		if(ListOfApps.indexOf(target)<0){
- 			ListOfApps += ('\''+target+'\',');
- 		}
- 		console.log(ListOfApps);
+	if(actionName == 'guestmode-toggleapp'){
+		if (value==false){
+			if(ListOfApps.indexOf(target)<0){
+ 				ListOfApps.push(target);
+ 			}
+		}else{
+			var index = ListOfApps.indexOf(target);
+			console.log('INDEX:      '+index);
+			if(index>=0){
+				ListOfApps.splice(index,1);
+			}
+		}
+ 		console.log('LIST OF APPS:        '+ListOfApps);
  	}
  	if(actionName == 'guestmode-toggle'){
 		console.log('In guest mode');
