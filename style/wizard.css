@@ -6,3 +6,18 @@
 .wizard .illustrated-description {
     display: block;
 }
+
+.topic-details {
+    left: 0;
+    right: 0;
+}
+.topic-details .main-image {
+    height: 330px;
+    margin-top: -6rem;
+    position: relative;
+}
+.topic-top div.description {
+    padding: 2rem 3rem;
+    position: absolute;
+    z-index: 10;
+}
