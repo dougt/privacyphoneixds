@@ -11,6 +11,13 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	console.log('value : ' + value);
 	console.log('target: ' + target);
 	
+	if((actionName == 'guestmode-togglefeature')&&(value==false)){
+ 		if(ListOfApps.indexOf(target)<0){
+ 			ListOfApps += ('\''+target+'\',');
+ 		}
+ 		console.log(ListOfApps);
+ 	}
+	
 	if(typeof callback === 'function') {
 	    callback();
 	}
