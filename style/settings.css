@@ -171,14 +171,12 @@
     color: rgb(80, 88, 89);
 }
 .topic-top {
-    margin-top: 6rem;
     position: relative;
     background: rgb(205, 227, 227);
 }
 .topic-details {
     left: 0;
     right: 0;
-    border-bottom: 0.1rem solid #E6E6E3;
 }
 .topic-details .main-image {
     height: 350px;
@@ -195,6 +193,9 @@
     padding-bottom: 0.5rem;
     background: rgb(241,241,237);
     overflow: hidden;
+}
+.topic-top .topic-switch {
+    border-bottom: 0.1rem solid #E6E6E3;
 }
 .setting .title {
     line-height: 4.6rem;
@@ -307,4 +308,9 @@ form[role="dialog"] {
     height: 100%;
     margin: 0;
     width: 100%;
+}
+
+.illustrated-description {
+    display: none;
+    margin-top: 6rem;
 }

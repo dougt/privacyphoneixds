@@ -1,1 +1,8 @@
+.wizard section[role="region"] > header:first-child a,
+.wizard section[role="region"] > header:first-child button {
+    display: none;
+}
 
+.wizard .illustrated-description {
+    display: block;
+}

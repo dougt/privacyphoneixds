@@ -223,13 +223,15 @@ var foxPrivacyApp = foxPrivacyApp || {};
                     var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
                     for(var i in settingsLists) {
                         var settingsList = settingsLists.item(i);
-                        settingsList.classList.toggle('disabled');
-                        var isDisabled = settingsList.classList.contains('disabled');
-                        var inputElements = settingsList.getElementsByTagName('input');
-                        for(var j in inputElements) {
-                            var inputElement = inputElements.item(j);
-                            if(inputElement) {
-                                inputElement.disabled = isDisabled;
+                        if(settingsList !== null) {
+                            settingsList.classList.toggle('disabled');
+                            var isDisabled = settingsList.classList.contains('disabled');
+                            var inputElements = settingsList.getElementsByTagName('input');
+                            for(var j in inputElements) {
+                                var inputElement = inputElements.item(j);
+                                if(inputElement) {
+                                    inputElement.disabled = isDisabled;
+                                }
                             }
                         }
                     }

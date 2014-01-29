@@ -9,7 +9,7 @@ ul {
   padding-right: 3rem;
 }
 
-.settings-panel [data-type="list"] {
+.settings-panel-list [data-type="list"] {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
