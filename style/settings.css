@@ -189,13 +189,12 @@
     z-index: 10;
 }
 .topic-switch {
-    padding: 1rem 3rem;
-    padding-bottom: 0.5rem;
     background: rgb(241,241,237);
     overflow: hidden;
 }
 .topic-top .topic-switch {
     border-bottom: 0.1rem solid #E6E6E3;
+    padding: 1rem 3rem 0.5rem;
 }
 .setting .title {
     line-height: 4.6rem;
