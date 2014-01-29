@@ -166,7 +166,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
                     var childElement = grandchildElement.parentElement;
                     var parentElement = childElement.parentElement;
                     console.log('tagName: ' + parentElement.tagName);
-                    if(parentElement.tagName === 'X-DECK' || parentElement.tagName === 'X-SLIDEBOX') {
+                    if(parentElement.tagName === 'X-DECK' || parentElement.tagName === 'X-SLIDES') {
                         var childIndex = Array.prototype.indexOf.call(parentElement.children, childElement);
                         if(parentElement.tagName === 'X-DECK') {
                             console.log('shuffle to: ' + childIndex);
@@ -174,7 +174,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
                         }
                         else {
                             console.log('slide to: ' + childIndex);
-                            parentElement.slideTo(childIndex);
+                            parentElement.parentElement.slideTo(childIndex);
                         }
                         pathArray.shift();
                         settings.followLinkRecursive(childElement, pathArray);
