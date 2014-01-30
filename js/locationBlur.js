@@ -23,7 +23,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
     foxPrivacyApp.locationBlur = {
     
         init: function() {
-            var locationBlurForm = document.getElementById('locationBlurSettings');
+            var locationBlurForm = document.querySelector('.locationBlurSettings');
             checkboxes = locationBlurForm.getElementsByTagName('input');
             locationFormDialog = document.getElementById('locationblur-locationpickerdialog');
             currentValue = this.getCurrentValue();
