@@ -1,18 +1,18 @@
-var foxPrivacyApp = foxPrivacyApp || {};
+var app = app || {};
 
 (function() {
-    var settings = {
+    app.settings = {
         init: function() {
-            settings.rootDeck = document.querySelector("x-deck");
-            settings.slidebox = document.querySelector("x-slidebox.wizard");
-            settings.slides = settings.slidebox.querySelector("x-slides").children;
+            app.settings.rootDeck = document.querySelector("x-deck");
+            app.settings.slidebox = document.querySelector("x-slidebox.wizard");
+            app.settings.slides = app.settings.slidebox.querySelector("x-slides").children;
 
-            settings.followDeepLink();
-            window.addEventListener("hashchange", settings.followDeepLink, false);
+            app.settings.followDeepLink();
+            window.addEventListener("hashchange", app.settings.followDeepLink, false);
 
-            new GestureDetector(settings.slidebox).startDetecting();
+            new GestureDetector(app.settings.slidebox).startDetecting();
 
-            settings.slidebox.addEventListener('swipe', function(event){
+            app.settings.slidebox.addEventListener('swipe', function(event){
                 var direction = event.detail.direction;
 
                 if (direction == 'left') {
@@ -22,36 +22,36 @@ var foxPrivacyApp = foxPrivacyApp || {};
                     direction = -1;
                 }
 
-                var current_slide = settings.get_current_slide();
+                var current_slide = app.settings.get_current_slide();
                 if (typeof current_slide === "undefined") {
-                    current_slide = settings.slides[0];
+                    current_slide = app.settings.slides[0];
                 }
-                var current_slide_index = Array.prototype.indexOf.call(settings.slides, current_slide);
-                var next_slide_index = (current_slide_index + direction) % settings.slides.length;
+                var current_slide_index = Array.prototype.indexOf.call(app.settings.slides, current_slide);
+                var next_slide_index = (current_slide_index + direction) % app.settings.slides.length;
                 console.log(current_slide_index + " " + next_slide_index);
-                var next_slide = settings.slides[next_slide_index];
+                var next_slide = app.settings.slides[next_slide_index];
                 var current_topic = current_slide.querySelector(".topic");
                 var next_topic = next_slide.querySelector(".topic");
 
                 if (current_topic && next_topic) {
-                    if (settings.is_topic_info_mode(current_topic)) {
+                    if (app.settings.is_topic_info_mode(current_topic)) {
                         console.log('info '+next_topic.className);
-                        settings.topic_info_mode_scroll(next_topic);
+                        app.settings.topic_info_mode_scroll(next_topic);
                     }
                     else {
-                        console.log('settings '+next_topic.className);
-                        settings.topic_settings_mode_scroll(next_topic);
+                        console.log('app.settings '+next_topic.className);
+                        app.settings.topic_app.settings_mode_scroll(next_topic);
                     }
                 }
 
-                settings.slidebox.slideTo(next_slide_index);
+                app.settings.slidebox.slideTo(next_slide_index);
 
             });
 
             var setting_toggles = document.querySelectorAll(".setting-toggle");
 
             var setting_toggle_click = function(event){
-                settings.toggle_setting(this);
+                app.settings.toggleSetting(this);
             };
 
             for (var i = 0; i < setting_toggles.length; i++) {
@@ -76,7 +76,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 
         is_topic_info_mode: function(topic) {
             var scroll_target = topic.querySelector(".settings-scroll-target");
-            scroll_target_offset = settings.real_offset(scroll_target, topic);
+            scroll_target_offset = app.settings.real_offset(scroll_target, topic);
             if (topic.scrollTop < scroll_target_offset.top - 30) {
                 return true;
             }
@@ -86,12 +86,12 @@ var foxPrivacyApp = foxPrivacyApp || {};
             topic.scrollTop = 0;
 
             if (smooth === true) {
-                settings.smooth_scroll_to(topic, topic.parentElement);
+                app.settings.smooth_scroll_to(topic, topic.parentElement);
             }
         },
         topic_settings_mode_scroll: function(topic) {
             var target = topic.querySelector(".settings-scroll-target");
-            var target_offset = settings.real_offset(target, topic);
+            var target_offset = app.settings.real_offset(target, topic);
             topic.scrollTop = target_offset.top;
         },
 
@@ -108,8 +108,8 @@ var foxPrivacyApp = foxPrivacyApp || {};
                 return;
             }
 
-            if (settings.is_topic_info_mode(topic)) {
-                settings.topic_info_mode_scroll(topic, true);
+            if (app.settings.is_topic_info_mode(topic)) {
+                app.settings.topic_info_mode_scroll(topic, true);
             }
         },
 
@@ -121,7 +121,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
                 area.scrollTop += signed_step;
 
                 setTimeout(function() {
-                    settings.smooth_scroll_to(area, target);
+                    app.settings.smooth_scroll_to(area, target);
                 }, 10);
             }
         },
@@ -143,8 +143,8 @@ var foxPrivacyApp = foxPrivacyApp || {};
         },
 
         get_current_slide: function() {
-            for (var i = 0; i < settings.slides.length; i++) {
-                var slide = settings.slides[i];
+            for (var i = 0; i < app.settings.slides.length; i++) {
+                var slide = app.settings.slides[i];
                 if (slide.getAttribute("selected")) {
                     return slide;
                 }
@@ -153,7 +153,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 
         followDeepLink: function() {
             var pathArray = window.location.hash.split('#').slice(1);
-            settings.followLinkRecursive(settings.rootDeck, pathArray);
+            app.settings.followLinkRecursive(app.settings.rootDeck, pathArray);
         },
 
         followLinkRecursive: function(element, pathArray) {
@@ -177,7 +177,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
                             parentElement.parentElement.slideTo(childIndex);
                         }
                         pathArray.shift();
-                        settings.followLinkRecursive(childElement, pathArray);
+                        app.settings.followLinkRecursive(childElement, pathArray);
                     }
                 }
             }
@@ -186,16 +186,16 @@ var foxPrivacyApp = foxPrivacyApp || {};
         scroll_to: function(area_selector, target_selector) {
             var area = document.querySelector(area_selector);
             var target = area.querySelector(target_selector);
-            var target_offset = settings.real_offset(target, area);
+            var target_offset = app.settings.real_offset(target, area);
             area.scrollTop = target_offset.top;
         },
 
         slide_and_scroll_to: function(slide, scroll) {
-            var scroll_area = settings.slidebox.querySelector(slide);
+            var scroll_area = app.settings.slidebox.querySelector(slide);
             if (scroll !== null) {
                 slide = scroll_area.parentElement;
-                var slide_index = Array.prototype.indexOf.call(settings.slides, slide);
-                settings.slidebox.slideTo(slide_index);
+                var slide_index = Array.prototype.indexOf.call(app.settings.slides, slide);
+                app.settings.slidebox.slideTo(slide_index);
             }
 
             if (typeof scroll === "string" && scroll !== "") {
@@ -206,16 +206,16 @@ var foxPrivacyApp = foxPrivacyApp || {};
             }
         },
 
-        toggle_setting: function(elem) {
+        toggleSetting: function(elem) {
 
-            var settingElement = settings.find_ancestor_with_class(elem, "setting"),
+            var settingElement = app.settings.find_ancestor_with_class(elem, "setting"),
                 action = elem.getAttribute('data-action'),
                 target = elem.getAttribute('data-target') || undefined,
                 value,
                 disabled = false;
 
             if (settingElement) {
-                var settingsList = settings.find_ancestor_with_class(settingElement, "settings-list");
+                var settingsList = app.settings.find_ancestor_with_class(settingElement, "settings-list");
                 if(settingsList) {
                     disabled = settingsList.classList.contains('disabled');
                 }
@@ -244,7 +244,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
             }
 
             if(!disabled) {
-                foxPrivacyApp.handleSetting(action, value, target);
+                app.handleSetting(action, value, target);
             }
 
         }
@@ -258,13 +258,13 @@ var foxPrivacyApp = foxPrivacyApp || {};
     });
 
     document.addEventListener('HtmlImportsDone', function() {
-        foxPrivacyApp.locationBlur.init();
-        foxPrivacyApp.insertAppList(function() {
+        app.locationBlur.init();
+        app.insertAppList(function() {
             var e = new Event('AppListDone');
             document.dispatchEvent(e);
         });
     });
 
-    document.addEventListener('AppListDone', settings.init);
+    document.addEventListener('AppListDone', app.settings.init);
 
 }());

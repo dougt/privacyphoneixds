@@ -1,4 +1,4 @@
-var foxPrivacyApp = foxPrivacyApp || {};
+var app = app || {};
 
 (function() {
 
@@ -20,7 +20,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
         };
     };
 
-    foxPrivacyApp.locationBlur = {
+    app.locationBlur = {
     
         init: function() {
             var locationBlurForm = document.querySelector('.locationBlurSettings');
@@ -73,7 +73,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
                 break;
             case "Map":
                 locationFormDialog.style.display = "block";
-                foxPrivacyApp.locationPicker.init();
+                app.locationPicker.init();
                 break;
             default:
                 console.log('Unkown value chosen');
@@ -94,7 +94,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 
         confirmLocation : function() {
             currentValue = 'Map';
-            currentLocation = foxPrivacyApp.locationPicker.getCurrentLocation();
+            currentLocation = app.locationPicker.getCurrentLocation();
             console.log('location chosen');
             locationFormDialog.style.display = 'none';
         }

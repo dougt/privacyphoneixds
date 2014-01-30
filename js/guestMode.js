@@ -1,4 +1,4 @@
-var foxPrivacyApp = foxPrivacyApp || {};
+var app = app || {};
 
 (function() {
     
@@ -7,7 +7,7 @@ var foxPrivacyApp = foxPrivacyApp || {};
 	hidden_roles =  ['system', 'keyboard', 'homescreen', 'input', 'search' ]
 	;	
 
-    foxPrivacyApp.insertAppList = function(callback) {
+    app.insertAppList = function(callback) {
         if(!appMgr) {
             console.log('App manager not found. Are you using Firefox OS?');
             if(typeof callback === 'function') {

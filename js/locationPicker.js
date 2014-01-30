@@ -1,17 +1,17 @@
-var foxPrivacyApp = foxPrivacyApp || {};
+var app = app || {};
 
 (function() {
     
     var currentLocation,
         marker;
     
-    foxPrivacyApp.locationPicker = {
+    app.locationPicker = {
         
         init : function() {
         
             if(typeof google !== 'undefined') {
                 
-                currentLocation = foxPrivacyApp.locationBlur.getCurrentLocation();
+                currentLocation = app.locationBlur.getCurrentLocation();
                 var center = typeof currentLocation !== 'undefined' ? new google.maps.LatLng(currentLocation.lat, currentLocation.lon) : new google.maps.LatLng(59.32522, 18.07002);
                 var map;
 

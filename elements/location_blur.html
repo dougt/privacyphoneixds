@@ -54,7 +54,7 @@
 					   name = "radSize"
 					   id = "LocOff"
 					   value = "Off"
-					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
+					   onclick = "app.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
 				</label>
@@ -64,7 +64,7 @@
 					   name = "radSize"
 					   id = "LocRandom"
 					   value = "Random" 
-					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
+					   onclick = "app.locationBlur.setBlurLevel(this)"
 					   checked
 					   required />
 				    <span></span>
@@ -75,7 +75,7 @@
 					   name = "radSize"
 					   id = "LocMap"
 					   value = "Map" 
-					   onclick = "foxPrivacyApp.locationBlur.setBlurLevel(this)"
+					   onclick = "app.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
 				</label>
@@ -98,8 +98,8 @@
 		    <div id="locationblur-locationpicker">
 		</section>
 		<menu>
-		    <button type="button" onclick="foxPrivacyApp.locationBlur.closeLocationDialog()">Cancel</button>
-		    <button type="button" onclick="foxPrivacyApp.locationBlur.confirmLocation()" class="recommend">OK</button>
+		    <button type="button" onclick="app.locationBlur.closeLocationDialog()">Cancel</button>
+		    <button type="button" onclick="app.locationBlur.confirmLocation()" class="recommend">OK</button>
 		</menu>
 	    </form>	
 	</section>
