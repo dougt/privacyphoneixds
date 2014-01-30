@@ -126,7 +126,7 @@ var app = app || {};
             }
         },
 
-        find_ancestor_with_class: function(elem, class_name, levels) {
+        findAncestorWithClass: function(elem, class_name, levels) {
             levels = typeof levels !== "undefined" ? levels : 10;
             var setting_found = false;
 
@@ -206,20 +206,31 @@ var app = app || {};
             }
         },
 
+        submitForm: function(elem) {
+            var fields = elem.querySelectorAll('input');
+            for(var i in fields) {
+                var field = fields.item(i);
+                if(field !== null) {
+                    var action = elem.getAttribute('data-action'),
+                        target = elem.getAttribute('data-target') || undefined,
+                        value = field.value;
+                    app.handleSetting(action, value, target);
+                }
+            }
+        },
+
         toggleSetting: function(elem) {
 
-            var settingElement = app.settings.find_ancestor_with_class(elem, "setting"),
+            var settingElement = app.settings.findAncestorWithClass(elem, "setting"),
                 action = elem.getAttribute('data-action'),
                 target = elem.getAttribute('data-target') || undefined,
                 value,
                 disabled = false;
 
             if (settingElement) {
-                var settingsList = app.settings.find_ancestor_with_class(settingElement, "settings-list");
-                if(settingsList) {
-                    disabled = settingsList.classList.contains('disabled');
-                }
-                else {
+                value = settingElement.classList.contains('on');
+                var settingsList = app.settings.findAncestorWithClass(settingElement, "settings-list");
+                if (!settingsList) { // It's a "primary" setting
                     var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
                     for(var i in settingsLists) {
                         var settingsList = settingsLists.item(i);
@@ -236,16 +247,23 @@ var app = app || {};
                         }
                     }
                 }
-                if(!disabled) {
-                    settingElement.classList.toggle("off");
-                    settingElement.classList.toggle("on");
+                else { // It's a "secondary" setting
+                    disabled = settingsList.classList.contains('disabled');
                 }
-                value = settingElement.classList.contains('on');
+                if(!disabled) {
+                    if(elem.classList.contains('setting-toggle')) {
+                        settingElement.classList.toggle("off");
+                        settingElement.classList.toggle("on");
+                        app.handleSetting(action, value, target);
+                    }
+                    else {
+                        if(elem.tagName === 'FORM') {
+                            app.settings.submitForm(elem);
+                        }
+                    }
+                }
             }
 
-            if(!disabled) {
-                app.handleSetting(action, value, target);
-            }
 
         }
     };

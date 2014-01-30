@@ -42,17 +42,17 @@
 
       <section data-type="list" class="full-height">
         <ul class="settings-list large">
-          <li>
+          <li class="setting">
             <p>
               Send Password to email
             </p>
             <p>
               The password you need to log in and track your phone will be sent to you via email.<br />
             </p>
-            <form class="bottom" role="search">
+            <form action="" class="bottom" data-action="findmyfox-password" onsubmit="app.settings.toggleSetting(this);return false;" role="search">
               <button type="submit">Send</button>
               <p>
-                <input type="password" />
+                <input name="password" type="password" value="" />
                 <!--<button type="reset">Clear</button>-->
               </p>
             </form>
