@@ -1,4 +1,4 @@
-var app = app || {};
+var foxPrivacyApp = foxPrivacyApp || {};
 var ListOfApps = new Array();
 'use strict';
 (function() {
@@ -6,7 +6,7 @@ var ListOfApps = new Array();
      * Define actions here according to the action string that is passed as actionName and a value.
      * "Target" is only used for "secondary" toggles, and will be undefined for "primary" toggles.
      * */
-    app.handleSetting = function(actionName, value, target, callback) {
+    foxPrivacyApp.handleSetting = function(actionName, value, target, callback) {
 
         console.log('actionName: ' + actionName);
 	console.log('value : ' + value);
@@ -24,42 +24,33 @@ var ListOfApps = new Array();
 				ListOfApps.splice(index,1);
 			}
 		}
- 		console.log('LIST OF APPS:        '+ListOfApps);
- 	}
- 	if(actionName == 'guestmode-toggle'){
- 		var settings = window.navigator.mozSettings;
+		var settings = window.navigator.mozSettings;
  		if (!settings) {
  			console.log('no settings');
    			return;
  		}
- 		var reqEnabled = settings.createLock().get('bluetooth.enabled');
+		var reqList = settings.createLock().set({'kidmode.list': ListOfApps});
+    	reqList.onsuccess = function() {
+    		var isBluetoothEnabled = reqList.result['kidmode.enabled'];
+      		console.log('List Set');
+   		};
+ 		console.log('LIST OF APPS:        '+ListOfApps);
+ 	}
+ 	if(actionName == 'guestmode-toggle'){
+ 		/*var settings = window.navigator.mozSettings;
+ 		if (!settings) {
+ 			console.log('no settings');
+   			return;
+ 		}
+ 		var reqEnabled = settings.createLock().get('kidmode.enabled');
     	reqEnabled.onsuccess = function() {
-    		  var isBluetoothEnabled = reqEnabled.result['bluetooth.enabled'];
+    		  var isBluetoothEnabled = reqEnabled.result['kidmode.enabled'];
       		  console.log('AAAAAAAAA: '+isBluetoothEnabled);
    		 };
-   		 
-   		var req = settings.createLock().set({'bluetooth.enabled': value});
+   		var req = settings.createLock().set({'kidmode.enabled': value});
     	req.onsuccess = function() {
-    		  var isBluetoothEnabled = reqEnabled.result['bluetooth.enabled'];
+    		  var isBluetoothEnabled = req.result['kidmode.enabled'];
       		  console.log('SET: '+isBluetoothEnabled);
-   		 };
- 	
- 	
-	/*	console.log('In guest mode');
-		var settings = window.navigator.mozSettings;
-		console.log('window navigator mozSettings');
-		
-		var lock = settings.createLock();
-		console.log('settings createLock');
-		
-		var req = lock.set({'wifi.enabled': true});
-		console.log('Set Works');
-		
-		req.onsuccess = function bt_EnabledSuccess() {
-      		console.log('BT on');
-    	};
-   	 	req.onerror = function bt_EnabledOnerror() {
-     		console.log('BT off');
    		 };*/
 		console.log(actionName+'FUNCTION WORKS:'+value);
  	}
