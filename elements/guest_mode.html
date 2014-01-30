@@ -13,8 +13,8 @@
       </header>
     </section>
 
-    <div class="card-content topic guest-mode">
-      <div class="topic-top setting guest-mode on">
+    <div class="card-content setting topic guest-mode on">
+      <div class="topic-top">
         <div class="description on">
           The Guest Mode makes it possible to lend your phone to friends with only selected apps activated. All other apps and data are safely hidden and can only be accessed with the phone’s pin code.
         </div>
@@ -34,58 +34,21 @@
 
           <div class="topic-switch">
             <div class="title">Guest Mode</div>
-            <div class="setting-toggle" data-action="guestmode-toggle"><div></div></div>
+            <div class="setting-toggle"><div></div></div>
           </div>
         </div>
       </div>
 
+
+
       <ul class="settings-list">
-        <li class="setting wifi on">
-          <div class="topic-switch">
-            <span class="title">
-              Wifi
-            </span>
-            <div class="setting-toggle" data-action="guestmode-togglefeature" data-target="wifi"><div></div></div>
-          </div>
-        </li>
-        <li class="setting bluetooth on">
-          <div class="topic-switch">
-            <span class="title">
-              Bluetooth
-            </span>
-            <div class="setting-toggle" data-action="guestmode-togglefeature" data-target="bluetooth"><div></div></div>
-          </div>
-        </li>
-        <li class="setting camera on">
-          <div class="topic-switch">
-            <span class="title">
-              Camera
-            </span>
-            <div class="setting-toggle" data-action="guestmode-togglefeature" data-target="camera"><div></div></div>
-          </div>
-        </li>
-        <li class="setting mobile-data on">
-          <div class="topic-switch">
-            <span class="title">
-              Mobile-Data
-            </span>
-            <div class="setting-toggle" data-action="guestmode-togglefeature" data-target="mobiledata"><div></div></div>
-          </div>
-        </li>
-        <li class="spacing-top">
-          <span class="menu-item spacing-top">
+        <li>
+          <span class="menu-item">
             Make a list of apps
           </span>
           <span class="menu-item-long-desc">
-            Apps that will be available in guest mode
+            Tap + to add an app to the guest mode and - to remove it
           </span>
-        </li>
-        <li>
-          <ul class="app-list" id="guest-mode-app-list">
-            <li class="setting">
-              <span class="gray">Loading...</span>
-            </li>
-          </ul>
         </li>
       </ul>
     </div>

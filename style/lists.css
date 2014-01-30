@@ -32,7 +32,6 @@ ul li label:not([for]) {
 }
 
 ul li > a,
-ul li > div,
 ul li > span,
 ul li > label > span {
   display: block;
@@ -45,17 +44,6 @@ ul li > label > span {
   line-height: 6rem;
   padding: 0 3rem;
   margin: 0 -1.5rem;
-}
-
-ul li > ul li > a,
-ul li > ul li > div,
-ul li > ul li > span,
-ul li > ul li > label > span {
-  margin-right: -3rem;
-}
-
-ul li > ul li {
-  overflow-x: hidden;
 }
 
 ul li.active a,

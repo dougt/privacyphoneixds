@@ -7,9 +7,6 @@
   },
   "launch_path": "/index.html",
   "permissions": {
-    "webapps-manage": {
-      "description": "Required to display a list of installed applications"
-    }
   },
   "icons": {
     "30": "/icons/appicon_30.png",
@@ -24,8 +21,5 @@
     }
   },
   "default_locale": "en-US",
-  "orientation": [
-    "portrait"
-  ],
-  "type": "certified"
+  "orientation": ["portrait"]
 }

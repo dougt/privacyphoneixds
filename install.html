@@ -6,7 +6,7 @@
     <p>Packaged app installation page</p>
     <script>
       // This URL must be a full url.
-      var manifestUrl = 'http://192.168.2.64:8080/package.manifest';
+      var manifestUrl = 'http://192.168.2.51:8080/package.manifest';
       var req = navigator.mozApps.installPackage(manifestUrl);
       req.onsuccess = function() {
         alert(this.result.origin);
