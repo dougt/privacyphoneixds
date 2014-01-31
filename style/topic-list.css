@@ -3,3 +3,16 @@
     max-width: 42px;
     margin-top: 1rem;
 }
+
+
+#select-dirty-hack
+{
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+#select-dirty-hack select
+{
+	font-family: "Fira Sans OT";
+	padding-top: 1rem;
+}
