@@ -6,6 +6,9 @@
 .wizard .illustrated-description {
     display: block;
 }
+.wizard .bottom-description {
+    display: none;
+}
 
 .topic-details {
     left: 0;
