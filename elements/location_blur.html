@@ -2,16 +2,16 @@
     <template>
 
 	<section role="region">
-	    <header>
-		<a href="#.settings-panel#.settings-panel-list">
-		    <span class="icon icon-back">back</span>
-		</a>
-		<menu type="toolbar">
-		    <!-- <button class="explain"><span>info</span></button> -->
-		</menu>
-		<h1>Location Blur</h1>
-	    </header>
-	</section>
+    <header>
+      <a href="#.settings-panel#.settings-panel-list">
+        <span class="icon icon-back">back</span>
+      </a>
+      <menu type="toolbar">
+          <!-- <button class="explain"><span>info</span></button> -->
+      </menu>
+      <h1>Location Blur</h1>
+    </header>
+  </section>
 
 	<div class="card-content topic location-blur">
 	    <div class="topic-top setting location-blur on">
@@ -41,52 +41,57 @@
             </div>
 	    </div>
 
-	    <section data-type="list" class="full-height">
-		<ul class="settings-list large">
-		    <li class="_level-of-blur-widget">
-			<form class="locationBlurSettings">
-			    <div class="setting level-of-blur city vertical">
-				<p>Precision</p>
-				<p>How precise should the location be?</p>
-				<label class="pack-radio">
-				    <span class="label-text">Turn location off</span>
-				    <input type = "radio"
-					   name = "radSize"
-					   id = "LocOff"
-					   value = "Off"
-					   onclick = "app.locationBlur.setBlurLevel(this)"
-					   required />
-				    <span></span>
-				</label>
-				<label class="pack-radio">
-				    <span class="label-text">Use random location</span>
-				    <input type = "radio"
-					   name = "radSize"
-					   id = "LocRandom"
-					   value = "Random" 
-					   onclick = "app.locationBlur.setBlurLevel(this)"
-					   checked
-					   required />
-				    <span></span>
-				</label>
-				<label class="pack-radio">
-				    <span class="label-text">Choose location on map</span>
-				    <input type = "radio"
-					   name = "radSize"
-					   id = "LocMap"
-					   value = "Map" 
-					   onclick = "app.locationBlur.setBlurLevel(this)"
-					   required />
-				    <span></span>
-				</label>
-				<p class="after">
-				    Apps will get the centre of the city you are in as your location. For most weather apps that is enough information.
-				</p>
-			    </div>
-			</form>
-		    </li>
-		</ul>
-	    </section>
+    <section data-type="list" class="full-height">
+      <ul class="settings-list large">
+        <li class="_level-of-blur-widget">
+          <form class="locationBlurSettings">
+            <div class="setting level-of-blur city">
+              <p>Precision</p>
+              <p>How precise should the location be?</p>
+              <ul class="large">
+                <li class="description">
+                  <label class="pack-radio">
+                    <input type = "radio"
+                           name = "radSize"
+                           id = "LocOff"
+                           value = "Off"
+                           onclick = "app.locationBlur.setBlurLevel(this)"
+                           required />
+                    <span>Turn location off</span>
+                  </label>
+                </li>
+                <li class="description">
+                  <label class="pack-radio">
+                    <input type = "radio"
+                           name = "radSize"
+                           id = "LocRandom"
+                           value = "Random"
+                           onclick = "app.locationBlur.setBlurLevel(this)"
+                           checked
+                           required />
+                    <span>Use random location</span>
+                  </label>
+                </li>
+                <li class="description">
+                  <label class="pack-radio">
+                    <input type = "radio"
+                           name = "radSize"
+                           id = "LocMap"
+                           value = "Map"
+                           onclick = "app.locationBlur.setBlurLevel(this)"
+                           required />
+                    <span>Choose location on map</span>
+                  </label>
+                </li>
+              </ul>
+              <p class="after" data-content="settings.locationBlur.description[settings.locationBlur.currentValue]">
+                  Apps will get the centre of the city you are in as your location. For most weather apps that is enough information.
+              </p>
+            </div>
+          </form>
+        </li>
+      </ul>
+    </section>
 	</div>
 
 	<section role="region" class="fullscreen">

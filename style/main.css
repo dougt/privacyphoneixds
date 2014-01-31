@@ -40,7 +40,7 @@ p,
 h1, p {
     margin: 1.2rem 3rem;
 }
-header {
+x-card > section:first-of-type > header:first-of-type {
   box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 }
 
@@ -65,7 +65,6 @@ section[role="region"] header h2 {
   font-size: 1.6rem;
   line-height: 5rem;
   height: 5rem;
-  margin-left: 5rem;
 }
 
 .vertical label {

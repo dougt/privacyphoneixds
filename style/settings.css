@@ -248,13 +248,13 @@
     overflow-y: auto;
 }
 
-.spacing-top > .menu-item {
-    margin-top: 1em;
-}
-
-.spacing-top
+.border-bottom-none
 {
     border-bottom: none !important;
+}
+
+.spacing-top {
+    margin-top: 1em;
 }
 
 .app-list li .app-name {
@@ -326,7 +326,6 @@ form[role="search"] p textarea {
 .bottom-description {
     display: block;
 }
-
 
 section.bottom-description[role="region"]
 {

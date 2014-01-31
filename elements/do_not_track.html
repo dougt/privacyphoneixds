@@ -1,0 +1,60 @@
+<element name="do-not-track">
+  <template>
+
+    <section role="region">
+      <header>
+        <a href="#.settings-panel#.settings-panel-list">
+          <span class="icon icon-back">back</span>
+        </a>
+        <h1>Do Not Track</h1>
+      </header>
+    </section>
+
+    <div class="card-content topic do-not-track">
+      <section class="spacing-top" data-type="list">
+          <ul class="large">
+            <li class="description">
+              <label class="pack-radio">
+                <input type="radio" name="privacy.donottrackheader.value" value="1" checked required>
+                <span data-l10n-id="doNotTrackActions">Tell websites and apps that I do not want to be tracked</span>
+              </label>
+            </li>
+            <li class="description">
+              <label class="pack-radio">
+                <input type="radio" name="privacy.donottrackheader.value" value="0" required>
+                <span data-l10n-id="allowTracking">Tell websites and apps that I want to be tracked</span>
+              </label>
+            </li>
+            <li class="description">
+              <label class="pack-radio">
+                <input type="radio" name="privacy.donottrackheader.value" value="-1" required>
+                <span data-l10n-id="doNotHavePrefOnTracking">Do not tell websites and apps anything about my tracking preferences</span>
+              </label>
+            </li>
+          </ul>
+      </section>
+
+      <section role="region" class="bottom-list bottom-description">
+        <header>
+          <h2 data-l10n-id="doNotTrack-dt">How does Do Not Track work?</h2>
+        </header>
+        <ul>
+          <li class="description">
+            <p data-l10n-id="doNotTrack-dd1">
+              When you turn on the Do Not Track feature, your device tells every
+              website and app (as well as advertisers and other content providers)
+              that you don’t want your behavior tracked.
+            </p>
+            <p data-l10n-id="doNotTrack-dd2">
+              Turning on Do Not Track won’t affect your ability to log into
+              websites, nor cause your device to forget your private information —
+              such as the contents of shopping carts, location information, or
+              log-in information.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  </template>
+</element>
