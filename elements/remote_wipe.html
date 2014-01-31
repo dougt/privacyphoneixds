@@ -17,7 +17,7 @@
       <div class="topic-top setting remote-wipe on">
         <div class="illustrated-description">
           <div class="description on">
-            Remote Wipe makes it possible to delete all of your data from your phone from a distance. You can even make a backup before!
+            Remote Wipe makes it possible to delete all the data on your phone remotely, by using the phone of a friend or the Where Is My Fox website.
           </div>
           <div class="description off">
             Your phone contains a lot of sensitive information, your photos, your e-mails and much more. If it ever were to fall into the wrong hands, villains could easily access everything.
@@ -42,22 +42,36 @@
 
       <section data-type="list" class="full-height">
         <ul class="settings-list large">
-          <li>
+          <li class="setting">
             <p>
-              Send Password to email
+              Where Is My Fox
             </p>
             <p>
-              The password you need to log in and track your phone will be sent to you via email.<br />
+              Remote wipe is based on Mozillas Where Is My Fox service. Please log in to that service to use this feature.
             </p>
-            <input type="text" />
+            <p>
+              <a href="#"
+                 role="button"
+                 class="icon icon-view">
+                Log in
+              </a>
+            </p>
           </li>
-          <li>
+          <li class="setting">
             <p>
-              Remote Signal
+              Backup
             </p>
             <p>
-              If you don’t see it, you may hear it!
+              Before you remote wipe your phone we advise you to select a backup service.
             </p>
+            <span class="button icon icon-dialog" id="select-dirty-hack">
+              <select name="profile">
+                <option value="0" selected="selected">Dropbox</option>
+                <option value="1">Tresorit</option>
+                <option value="2">DT Server</option>
+                <option value="3">Local</option>
+              </select>
+            </span>
           </li>
         </ul>
       </section>

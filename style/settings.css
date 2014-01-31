@@ -121,7 +121,7 @@
 }
 
 .settings-list {
-    min-height: calc(100% - 12rem);
+    /*min-height: calc(100% - 12rem);*/
     padding: 0;
     transition: opacity 0.2s;
 }
@@ -252,6 +252,11 @@
     margin-top: 1em;
 }
 
+.spacing-top
+{
+    border-bottom: none !important;
+}
+
 .app-list li .app-name {
     clear: left;
     float: left;
@@ -311,4 +316,26 @@ form[role="search"] p textarea {
 .illustrated-description {
     display: none;
     margin-top: 6rem;
+}
+
+.bottom-description {
+    display: block;
+}
+
+
+section.bottom-description[role="region"]
+{
+    margin-top: 2rem;
+}
+section.bottom-description[role="region"] header:first-child
+{
+    height: auto;
+    text-align: center;
+}
+
+section.bottom-description ul.large li.setting p
+{
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #5B5B5B;
 }
