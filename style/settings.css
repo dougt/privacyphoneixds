@@ -266,7 +266,7 @@
     color: transparent;
     float: right;
     height: 3rem;
-    margin: 1rem 0px 1rem 0;
+    margin: 1rem 0 1rem 0;
     padding: 0;
     text-align: right;
     width: 3rem;
@@ -311,4 +311,9 @@ form[role="search"] p textarea {
 .illustrated-description {
     display: none;
     margin-top: 6rem;
+}
+
+.settings-panel [data-type="list"] aside.icon {
+    background-color: transparent;
+    margin: 0 6px;
 }
