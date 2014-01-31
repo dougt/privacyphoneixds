@@ -39,7 +39,6 @@ var app = app || {};
                 };
 
                 google.maps.event.addListener(marker, 'click', toggleBounce);
-
             }
             
             else {

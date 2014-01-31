@@ -69,7 +69,7 @@
 					   required />
 				    <span></span>
 				</label>
-				<label class="pack-radio">
+				<!--<label class="pack-radio">
 				    <span class="label-text">Choose location on map</span>
 				    <input type = "radio"
 					   name = "radSize"
@@ -78,7 +78,24 @@
 					   onclick = "app.locationBlur.setBlurLevel(this)"
 					   required />
 				    <span></span>
+				</label>-->
+				<label class="pack-radio">
+				    <span class="label-text">Choose a country</span>
+				    <input type = "radio"
+					   name = "radSize"
+					   id = "LocCountry"
+					   class = "LocMapPick"
+					   value = "Country"
+					   required />
+					   <span></span>
 				</label>
+				<div class="countrySelectContainer"></div>
+				<!--<span class="button icon icon-dialog" id="select-dirty-hack">
+			    	<select name="country" class="LocationCountryPicker">
+			    		<option value="Country" selected="selected">Mozilla settings</option>
+		                <option value="Country">Deutsche Telekom settings</option>
+			    	</select>
+		    	</span>-->
 				<p class="after">
 				    Apps will get the centre of the city you are in as your location. For most weather apps that is enough information.
 				</p>
