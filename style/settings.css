@@ -122,6 +122,7 @@
 
 .settings-list {
     /*min-height: calc(100% - 12rem);*/
+    clear: left;
     padding: 0;
     transition: opacity 0.2s;
 }
@@ -172,7 +173,6 @@
 }
 .topic-top {
     position: relative;
-    background: rgb(205, 227, 227);
 }
 .topic-switch {
     background: rgb(241,241,237);
@@ -314,6 +314,7 @@ form[role="search"] p textarea {
 }
 
 .illustrated-description {
+    background: rgb(205, 227, 227);
     display: none;
     margin-top: 6rem;
 }

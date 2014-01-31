@@ -1,0 +1,47 @@
+<element name="screen-lock">
+  <template>
+
+    <section role="region">
+      <header>
+        <a href="#.settings-panel#.settings-panel-list">
+          <span class="icon icon-back">back</span>
+        </a>
+        <h1>Screen lock</h1>
+      </header>
+    </section>
+
+    <div class="card-content topic screen-lock">
+      <div class="topic-top setting screen-lock on">
+        <div class="topic-switch">
+          <div class="title">
+            Lock screen
+          </div>
+          <div class="setting-toggle" data-action="guestmode-toggle" data-target="screenlock"><div></div></div>
+        </div>
+      </div>
+
+      <section data-type="list" class="full-height">
+        <ul class="settings-list large">
+          <li class="setting bluetooth on">
+            <div>
+              <span class="title">
+                Passcode lock
+              </span>
+              <div class="setting-toggle" data-action="screenlock-togglefeature" data-target="passcode-lock"><div></div></div>
+              <ul class="settings-list large">
+                <li class="setting">
+                  <form action="" class="bottom" data-action="screenlock-password" onsubmit="app.settings.toggleSetting(this);return false;" role="search">
+                    <button type="submit">Send</button>
+                    <p>
+                      <input name="password" type="password" value="" />
+                    </p>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </template>
+</element>
