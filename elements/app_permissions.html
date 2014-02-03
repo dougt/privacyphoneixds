@@ -40,44 +40,56 @@
           </div>
         </div>
 
-        <section data-type="list" class="full-height tabbed">
+        <section data-type="list" class="full-height tabbed spacing-top">
           <header>
-            <span class="tab selected" onclick="app.permissionsHistory.toggleTab(this)">Apps</span>
-            <span class="tab" onclick="app.permissionsHistory.toggleTab(this)">Permissions</span>
+            <span class="tab tab-0 selected" onclick="app.permissionsHistory.toggleTab(this, 0)">Apps</span>
+            <span class="tab tab-1" onclick="app.permissionsHistory.toggleTab(this, 1)">Permissions</span>
           </header>
-          <ul class="settings-list large tab selected" ng-show="!currentTab">
+          <ul class="settings-list tab tab-0 selected">
             <li>
-              <p>App 1</p>
-              <p>Permission 1</p>
-              <p>Permission 2</p>
-              <p>Permission 3</p>
+              <aside>
+                <img src="/images/app-icons/Camera_60.png">
+              </aside>
+              <p>Camera</p>
+              <p>hardware, file system, fine location</p>
             </li>
             <li>
-              <p>App 2</p>
-              <p>Permission 1</p>
-              <p>Permission 2</p>
-              <p>Permission 3</p>
+              <aside>
+                <img src="/images/app-icons/Sms_60.png">
+              </aside>
+              <p>SMS</p>
+              <p>contacts</p>
+            </li>
+            <li>
+              <aside>
+                <img src="/images/app-icons/Email_60.png">
+              </aside>
+              <p>E-Mail</p>
+              <p>network, contacts</p>
             </li>
           </ul>
-          <ul class="settings-list large tab" ng-show="currentTab">
+          <ul class="settings-list tab tab-1">
             <li>
-              <p>Permission 1</p>
-              <p>App 1</p>
-              <p>App 2</p>
-              <p>App 3</p>
+              <aside class="icon settings-icon permissions-geolocation"></aside>
+              <p>Location</p>
+              <p>fine location, coarse location</p>
             </li>
             <li>
-              <p>Permission 2</p>
-              <p>App 1</p>
-              <p>App 2</p>
-              <p>App 3</p>
+              <aside class="icon settings-icon permissions-contacts"></aside>
+              <p>Personal</p>
+              <p>contacts, calendar</p>
+            </li>
+            <li>
+              <aside class="icon settings-icon permissions-camera"></aside>
+              <p>Hardware</p>
+              <p>microphone, camera</p>
             </li>
           </ul>
         </section>
 
         <section role="region" class="bottom-list bottom-description">
           <section>
-            <header>
+            <header class="separator">
               <h2>What is Permissions History</h2>
             </header>
           </section>

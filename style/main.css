@@ -44,7 +44,7 @@ x-card > section:first-of-type > header:first-of-type {
   box-shadow: 0 0 5px rgba(0, 0, 0, .3);
 }
 
-[data-type="list"] header {
+header.separator {
   border: none;
   box-shadow: none;
   margin-left: -1.5rem;

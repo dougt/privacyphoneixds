@@ -351,7 +351,20 @@ section.bottom-description ul.large li.setting p
     color: #5B5B5B;
 }
 
+.tabbed > header {
+    border-bottom: solid 0.1rem #e7e7e7;
+    color: #4D4D4D;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: none;
+}
 .tabbed > header > span.tab {
+    display: block;
+    float: left;
+    margin-right: 0.5rem;
     opacity: 0.5;
 }
 .tabbed > ul.tab {
@@ -359,6 +372,7 @@ section.bottom-description ul.large li.setting p
 }
 
 .tabbed > header > span.tab.selected {
+    border-bottom: 2px solid #ff4E00;
     opacity: 1;
 }
 .tabbed > ul.tab.selected {
