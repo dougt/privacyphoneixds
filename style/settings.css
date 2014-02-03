@@ -68,7 +68,8 @@
     display: none;
 }
 
-.settings-list.disabled {
+section.disabled,
+.setting.disabled .setting {
     opacity: .3;
     pointer-events: none;
 }

@@ -232,10 +232,17 @@ var app = app || {};
                 var parentSettingsList = app.settings.findAncestorWithClass(settingElement, "settings-list");
                 var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
                 if (settingsLists) { // Has children settings
+                    var sections = settingElement.parentElement.childNodes;
+                    for(var i in sections) {
+                        var section = sections.item(i);
+                        if(section.classList != undefined) {
+                            section.classList.toggle('disabled');
+                        }
+                    }
                     for(var i in settingsLists) {
                         var settingsList = settingsLists.item(i);
                         if(settingsList !== null) {
-                            settingsList.classList.toggle('disabled');
+                            //settingsList.classList.toggle('disabled');
                             var isDisabled = settingsList.classList.contains('disabled');
                             var inputElements = settingsList.getElementsByTagName('input');
                             for(var j in inputElements) {
@@ -246,6 +253,9 @@ var app = app || {};
                             }
                         }
                     }
+                }
+                if(section !== null) {
+                    section.classList
                 }
                 if(parentSettingsList) {
                     disabled = parentSettingsList.classList.contains('disabled');
