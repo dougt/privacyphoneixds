@@ -349,3 +349,17 @@ section.bottom-description ul.large li.setting p
     line-height: 2rem;
     color: #5B5B5B;
 }
+
+.tabbed > header > span.tab {
+    opacity: 0.5;
+}
+.tabbed > ul.tab {
+    display: none;
+}
+
+.tabbed > header > span.tab.selected {
+    opacity: 1;
+}
+.tabbed > ul.tab.selected {
+    display: block;
+}

@@ -40,6 +40,41 @@
           </div>
         </div>
 
+        <section data-type="list" class="full-height tabbed">
+          <header>
+            <span class="tab selected" onclick="app.permissionsHistory.toggleTab(this)">Apps</span>
+            <span class="tab" onclick="app.permissionsHistory.toggleTab(this)">Permissions</span>
+          </header>
+          <ul class="settings-list large tab selected" ng-show="!currentTab">
+            <li>
+              <p>App 1</p>
+              <p>Permission 1</p>
+              <p>Permission 2</p>
+              <p>Permission 3</p>
+            </li>
+            <li>
+              <p>App 2</p>
+              <p>Permission 1</p>
+              <p>Permission 2</p>
+              <p>Permission 3</p>
+            </li>
+          </ul>
+          <ul class="settings-list large tab" ng-show="currentTab">
+            <li>
+              <p>Permission 1</p>
+              <p>App 1</p>
+              <p>App 2</p>
+              <p>App 3</p>
+            </li>
+            <li>
+              <p>Permission 2</p>
+              <p>App 1</p>
+              <p>App 2</p>
+              <p>App 3</p>
+            </li>
+          </ul>
+        </section>
+
         <section role="region" class="bottom-list bottom-description">
           <section>
             <header>
