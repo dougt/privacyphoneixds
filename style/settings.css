@@ -70,6 +70,7 @@
 
 .settings-list.disabled {
     opacity: .3;
+    pointer-events: none;
 }
 
 .privacy-status>h1 {
