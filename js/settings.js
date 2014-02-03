@@ -242,7 +242,6 @@ var app = app || {};
                     for(var i in settingsLists) {
                         var settingsList = settingsLists.item(i);
                         if(settingsList !== null) {
-                            //settingsList.classList.toggle('disabled');
                             var isDisabled = settingsList.classList.contains('disabled');
                             var inputElements = settingsList.getElementsByTagName('input');
                             for(var j in inputElements) {
@@ -288,6 +287,7 @@ var app = app || {};
     document.addEventListener('HtmlImportsDone', function() {
         app.locationBlur.init();
         app.locationCountry.init();
+        app.permissionsHistory.init();
         app.insertAppList(function() {
             var e = new Event('AppListDone');
             document.dispatchEvent(e);
