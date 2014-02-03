@@ -321,9 +321,18 @@ form[role="search"] p textarea {
     margin-top: 6rem;
 }
 
+.settings-panel [data-type="list"] aside.icon,
+.settings-panel .app-permissions [data-type="list"] aside img {
+    margin-right: 6px;
+}
+
 .settings-panel [data-type="list"] aside.icon {
     background-color: transparent;
-    margin: 0 6px;
+    margin-left: 6px;
+}
+
+.settings-panel .app-permissions [data-type="list"] aside.icon {
+    margin-right: 17px;
 }
 
 .bottom-description {
@@ -364,7 +373,7 @@ section.bottom-description ul.large li.setting p
 .tabbed > header > span.tab {
     display: block;
     float: left;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     opacity: 0.5;
 }
 .tabbed > ul.tab {
