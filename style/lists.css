@@ -24,8 +24,8 @@ ul {
 [data-type="list"] ul li.compact {
   padding-bottom: 0;
   padding-top: 0;
-}
 
+}
 [data-type="list"] ul.large li p {
   font-size: 1.4rem;
   line-height: 2rem;
@@ -41,4 +41,35 @@ ul {
 
 [data-type="list"] ul.large li p.after {
   margin-top: 1rem;
+}
+
+[data-type="list"] li > .pack-checkbox,
+[data-type="list"] li > .pack-radio,
+[data-type="list"] li > .pack-switch {
+    left: 0;
+    min-height: 4rem;
+    pointer-events: auto;
+    position: relative;
+    padding-right: 4rem;
+    width: calc(100% - 4rem);
+}
+
+[data-type="list"] li > .pack-checkbox input ~ span,
+[data-type="list"] li > .pack-radio input ~ span,
+[data-type="list"] li > .pack-switch input ~ span {
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+[data-type="list"] li > .pack-checkbox input ~ span:after,
+[data-type="list"] li > .pack-radio input ~ span:after,
+[data-type="list"] li > .pack-switch input ~ span:after {
+    left: auto;
+    margin-left: auto;;
+    right: 0;
+}
+
+label.pack-checkbox input ~ span:after, label.pack-radio input ~ span:after {
+    left: auto;
+    right: 0;
 }

@@ -229,9 +229,9 @@ var app = app || {};
 
             if (settingElement) {
                 value = settingElement.classList.contains('on');
-                var settingsList = app.settings.findAncestorWithClass(settingElement, "settings-list");
-                if (!settingsList) { // It's a "primary" setting
-                    var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
+                var parentSettingsList = app.settings.findAncestorWithClass(settingElement, "settings-list");
+                var settingsLists = settingElement.parentElement.getElementsByClassName('settings-list');
+                if (settingsLists) { // Has children settings
                     for(var i in settingsLists) {
                         var settingsList = settingsLists.item(i);
                         if(settingsList !== null) {
@@ -247,8 +247,8 @@ var app = app || {};
                         }
                     }
                 }
-                else { // It's a "secondary" setting
-                    disabled = settingsList.classList.contains('disabled');
+                if(parentSettingsList) {
+                    disabled = parentSettingsList.classList.contains('disabled');
                 }
                 if(!disabled) {
                     if(elem.classList.contains('setting-toggle')) {
