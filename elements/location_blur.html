@@ -74,23 +74,46 @@
                 </li>
                 <li class="description">
                   <label class="pack-radio">
-                    <input type = "radio"
+                    <!--<input type = "radio"
                            name = "radSize"
                            id = "LocMap"
                            value = "Map"
                            onclick = "app.locationBlur.setBlurLevel(this)"
+                           required />-->
+                        <input type = "radio"
+                           name = "radSize"
+                           id = "LocCountry"
+                           class = "LocMapPick"
+                           value = "Country"
                            required />
                     <span>Choose location on map</span>
                   </label>
+                  <div class="countrySelectContainer"></div>
                 </li>
               </ul>
-              <p class="after" data-content="settings.locationBlur.description[settings.locationBlur.currentValue]">
+              <!--<p class="after" data-content="settings.locationBlur.description[settings.locationBlur.currentValue]">
                   Apps will get the centre of the city you are in as your location. For most weather apps that is enough information.
-              </p>
+              </p>-->
             </div>
           </form>
         </li>
       </ul>
+    </section>
+    <section role="region" class="bottom-list bottom-description">
+      <section>
+        <header>
+          <h2>What is Location Blur</h2>
+        </header>
+      </section>
+      <section data-type="list">
+        <ul class="settings-list large">
+          <li class="setting">
+            <p>
+            Not every app needs your exact location to function properly. Instead of sharing your exact coordinates, you can choose to not share any location, a random place or pick a country, effectively blurring your location.
+            </p>
+          </li>
+        </ul>
+      </section>
     </section>
 	</div>
 
