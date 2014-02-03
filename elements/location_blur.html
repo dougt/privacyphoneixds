@@ -2,22 +2,22 @@
     <template>
 
 	<section role="region">
-    <header>
-      <a href="#.settings-panel#.settings-panel-list">
-        <span class="icon icon-back">back</span>
-      </a>
-      <menu type="toolbar">
-          <!-- <button class="explain"><span>info</span></button> -->
-      </menu>
-      <h1>Location Blur</h1>
-    </header>
-  </section>
+	    <header>
+		<a href="#.settings-panel#.settings-panel-list">
+		    <span class="icon icon-back">back</span>
+		</a>
+		<menu type="toolbar">
+		    <!-- <button class="explain"><span>info</span></button> -->
+		</menu>
+		<h1>Location Blur</h1>
+	    </header>
+	</section>
 
 	<div class="card-content topic location-blur">
 	    <div class="topic-top setting location-blur on">
             <div class="illustrated-description">
                 <div class="description on">
-                    Not every app needs your exact location to function properly. Instead of sharing your exact coordinates, you can choose to share the city or the country you are in, effectively blurring your location.
+                    Not every app needs your exact location to function properly. Instead of sharing your exact coordinates, you can choose to not share any location, a random place or pick a country, effectively blurring your location.
                 </div>
                 <div class="description off">
                     Many apps will access your exact location to tailor information to your needs. All this data combined can be used to generate a movement profile of all the places you have been to.
@@ -74,23 +74,46 @@
                 </li>
                 <li class="description">
                   <label class="pack-radio">
-                    <input type = "radio"
+                    <!--<input type = "radio"
                            name = "radSize"
                            id = "LocMap"
                            value = "Map"
                            onclick = "app.locationBlur.setBlurLevel(this)"
+                           required />-->
+                        <input type = "radio"
+                           name = "radSize"
+                           id = "LocCountry"
+                           class = "LocMapPick"
+                           value = "Country"
                            required />
                     <span>Choose location on map</span>
                   </label>
+                  <div class="countrySelectContainer"></div>
                 </li>
               </ul>
-              <p class="after" data-content="settings.locationBlur.description[settings.locationBlur.currentValue]">
+              <!--<p class="after" data-content="settings.locationBlur.description[settings.locationBlur.currentValue]">
                   Apps will get the centre of the city you are in as your location. For most weather apps that is enough information.
-              </p>
+              </p>-->
             </div>
           </form>
         </li>
       </ul>
+    </section>
+    <section role="region" class="bottom-list bottom-description">
+      <section>
+        <header>
+          <h2>What is Location Blur</h2>
+        </header>
+      </section>
+      <section data-type="list">
+        <ul class="settings-list large">
+          <li class="setting">
+            <p>
+            Not every app needs your exact location to function properly. Instead of sharing your exact coordinates, you can choose to not share any location, a random place or pick a country, effectively blurring your location.
+            </p>
+          </li>
+        </ul>
+      </section>
     </section>
 	</div>
 

@@ -114,7 +114,7 @@ var app = app || {};
         },
 
         smooth_scroll_to: function(area, target) {
-            var distance = area.scrollTop - target.offsetTop;
+            var atance = area.scrollTop - target.offsetTop;
             if (distance) {
                 var step = 50;
                 var signed_step = distance > 0 ? -step : step;
@@ -277,6 +277,7 @@ var app = app || {};
 
     document.addEventListener('HtmlImportsDone', function() {
         app.locationBlur.init();
+        app.locationCountry.init();
         app.insertAppList(function() {
             var e = new Event('AppListDone');
             document.dispatchEvent(e);

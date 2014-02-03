@@ -7,8 +7,11 @@
   },
   "launch_path": "/index.html",
   "permissions": {
+    "geolocation": {
+        "description": "Used to locate me"
+    },
     "systemXHR": {
-      "description": "Required to display the location picker"
+      "description": "Required to make Network calls" 
     },
     "webapps-manage": {
       "description": "Required to display a list of installed applications"

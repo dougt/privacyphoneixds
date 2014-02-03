@@ -75,6 +75,9 @@ var app = app || {};
                 locationFormDialog.style.display = "block";
                 app.locationPicker.init();
                 break;
+            case "Country":
+                console.log('do sth');
+                break;
             default:
                 console.log('Unkown value chosen');
                 break;

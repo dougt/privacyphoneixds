@@ -333,6 +333,10 @@ section.bottom-description[role="region"]
 {
     margin-top: 2rem;
 }
+section.bottom-description[role="region"] header
+{
+    box-shadow: none;
+}
 section.bottom-description[role="region"] header:first-child
 {
     height: auto;
