@@ -55,7 +55,7 @@ var app = app || {};
                     var countrySelectContainer = countrySelections[i];
                     countrySelectContainer.innerHTML = countrySelect;
                     var selectWidget = countrySelectContainer.querySelector('select');
-                    selectWidget.addEventListener('click', handleSelectedValue);
+                    selectWidget.onchange = handleSelectedValue;
                 }
             }
 
