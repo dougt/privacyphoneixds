@@ -7,10 +7,16 @@ var app = app || {};
 		{'country': 'Spain', 'latlong': '40.0000,-4.0000' },
 		{'country': 'Germany', 'latlong': '51.0000,9.0000' },
 		{'country': 'United Kindom', 'latlong': '54.0000,-2.0000' },
-		{'country': 'United States', 'latlong': '38.0000,-97.0000' },
+		{'country': 'United States', 'latlong': '38.0000,-97.0000' }
 	];
 
 	var appListElementSelector = '.guest-mode-app-list';
+
+    var handleSelectedValue = function() {
+        var value = this.value;
+        var action = this.getAttribute('data-action');
+        app.handleSetting(action, value);
+    };
 
 	app.locationCountry =
 	{
@@ -21,7 +27,7 @@ var app = app || {};
             var mapRadioButtons = document.getElementsByClassName('LocMapPick');
             if(mapRadioButtons.length != 0)
             {
-                for(i = 0; i < mapRadioButtons.length; i++)
+                for(var i = 0; i < mapRadioButtons.length; i++)
                 {
                     mapRadioButtons[i].addEventListener('click', function()
                     {
@@ -32,11 +38,11 @@ var app = app || {};
 
             // build list of countries, add to html
 
-            var countrySelect = "<span class='button icon icon-dialog' id='select-dirty-hack'><select name='country' class='LocationCountryPicker'>";
+            var countrySelect = "<span class='button icon icon-dialog select-dirty-hack'><select data-action='locationblur-countryselect' name='country' class='LocationCountryPicker'>";
 
-            for(i = 0; i < countries.length; i++)
+            for(var i = 0; i < countries.length; i++)
             {
-                countrySelect += '<option value="Country" data-latlong="' + countries[i].latlong + '">' + countries[i].country + '</option>';
+                countrySelect += '<option name="Country" value="' + countries[i].latlong + '">' + countries[i].country + '</option>';
             }
 
             countrySelect += '</select></span>';
@@ -44,11 +50,15 @@ var app = app || {};
             var countrySelections = document.getElementsByClassName('countrySelectContainer');
             if(countrySelections.length != 0)
             {
-                for(i = 0; i < countrySelections.length; i++)
+                for(var i = 0; i < countrySelections.length; i++)
                 {
-                    countrySelections[i].innerHTML = countrySelect;
+                    var countrySelectContainer = countrySelections[i];
+                    countrySelectContainer.innerHTML = countrySelect;
+                    var selectWidget = countrySelectContainer.querySelector('select');
+                    selectWidget.addEventListener('click', handleSelectedValue);
                 }
             }
+
         },
 
         // toggle on
@@ -58,7 +68,7 @@ var app = app || {};
         	var selectCountry = document.getElementsByClassName('LocationCountryPicker');
             if(selectCountry.length != 0)
             {
-                for(i = 0; i < selectCountry.length; i++)
+                for(var i = 0; i < selectCountry.length; i++)
                 {
                     //selectCountry[i].disabled = true;
                     //selectCountry[i].classList.add('disabled');
@@ -74,7 +84,7 @@ var app = app || {};
         	var selectCountry = document.getElementsByClassName('LocationCountryPicker');
             if(selectCountry.length != 0)
             {
-                for(i = 0; i < selectCountry.length; i++)
+                for(var i = 0; i < selectCountry.length; i++)
                 {
                     //selectCountry[i].disabled = false;
                     //selectCountry[i].classList.remove('disabled');

@@ -222,7 +222,7 @@ var app = app || {};
         toggleSetting: function(elem) {
 
             var settingElement = app.settings.findAncestorWithClass(elem, "setting"),
-                action = elem.getAttribute('data-action'),
+                action = elem.getAttribute('data-action') || elem.getAttribute('name'),
                 target = elem.getAttribute('data-target') || undefined,
                 value,
                 disabled = false;
