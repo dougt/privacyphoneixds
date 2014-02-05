@@ -4,16 +4,20 @@ var app = app || {};
 
 	var countries =
 	[
-		{'country': 'Spain', 'latlong': '40.0000,-4.0000' },
-		{'country': 'Germany', 'latlong': '51.0000,9.0000' },
-		{'country': 'United Kindom', 'latlong': '54.0000,-2.0000' },
-		{'country': 'United States', 'latlong': '38.0000,-97.0000' }
+		{'country': 'Spain', 'lat': 40, 'lon': -4 },
+		{'country': 'Germany', 'lat': 51, 'lon': 9.0000 },
+		{'country': 'United Kindom', 'lat': 54, 'lon': -2 },
+		{'country': 'United States', 'lat': 38, 'lon': -97 }
 	];
 
 	var appListElementSelector = '.guest-mode-app-list';
 
     var handleSelectedValue = function() {
-        var value = this.value;
+        var country = countries[this.value];
+        var value = {
+            lat: country.lat,
+            lon: country.lon
+        };
         var action = this.getAttribute('data-action');
         app.handleSetting(action, value);
     };
@@ -42,7 +46,7 @@ var app = app || {};
 
             for(var i = 0; i < countries.length; i++)
             {
-                countrySelect += '<option name="Country" value="' + countries[i].latlong + '">' + countries[i].country + '</option>';
+                countrySelect += '<option name="Country" value="' + i + '">' + countries[i].country + '</option>';
             }
 
             countrySelect += '</select></span>';
