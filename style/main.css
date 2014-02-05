@@ -47,8 +47,6 @@ x-card > section:first-of-type > header:first-of-type {
 header.separator {
   border: none;
   box-shadow: none;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
   padding-left: 0;
   padding-right: 0;
   text-align: center;
