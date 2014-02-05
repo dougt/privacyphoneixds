@@ -42,7 +42,7 @@ var app = app || {};
 
             // build list of countries, add to html
 
-            var countrySelect = "<span class='button icon icon-dialog select-dirty-hack'><select data-action='locationblur-countryselect' name='country' class='LocationCountryPicker'>";
+            var countrySelect = "<span class='button icon icon-dialog select-dirty-hack'><select data-action='locationblur-countryselect' name='country' class='LocationCountryPicker invisibility-hack'>Select a country";
 
             for(var i = 0; i < countries.length; i++)
             {
@@ -60,6 +60,9 @@ var app = app || {};
                     countrySelectContainer.innerHTML = countrySelect;
                     var selectWidget = countrySelectContainer.querySelector('select');
                     selectWidget.onchange = handleSelectedValue;
+                    selectWidget.onclick = function() {
+                        this.style.opacity = 1;
+                    };
                 }
             }
 

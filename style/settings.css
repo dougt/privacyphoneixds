@@ -387,3 +387,7 @@ section.bottom-description ul.large li.setting p
 .tabbed > ul.tab.selected {
     display: block;
 }
+
+.invisibility-hack {
+    opacity: 0;
+}
