@@ -94,7 +94,7 @@ var app = app || {};
                     //console.log('do sth');
                     break;
                 default:
-                    console.log('Unkown value chosen');
+                    console.log('Unknown value chosen');
                     break;
             }
         },
