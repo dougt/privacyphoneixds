@@ -335,6 +335,10 @@ form[role="search"] p textarea {
     margin-right: 17px;
 }
 
+.settings-panel .app-permissions [data-type="list"] aside ~ p {
+    margin-left: 53px;
+}
+
 .bottom-description {
     display: block;
 }

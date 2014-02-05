@@ -14,11 +14,16 @@ ul {
   padding-right: 1.5rem;
 }
 
+[data-type="list"] ul.large li,
+[data-type="list"] ul.multiline li {
+    clear: both;
+    height: auto;
+    padding-bottom: 0.5rem;
+}
+
 [data-type="list"] ul.large li {
-  height: auto;
-  overflow-y: auto;
-  padding-bottom: 0.5rem;
-  padding-top: 1rem;
+    overflow-y: auto;
+    padding-top: 1rem;
 }
 
 [data-type="list"] ul li.compact {
