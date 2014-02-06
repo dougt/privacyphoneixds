@@ -4,10 +4,10 @@ var app = app || {};
 
 	var countries =
 	[
-		{'country': 'Spain', 'lat': 40, 'lon': -4 },
-		{'country': 'Germany', 'lat': 51, 'lon': 9.0000 },
-		{'country': 'United Kindom', 'lat': 54, 'lon': -2 },
-		{'country': 'United States', 'lat': 38, 'lon': -97 }
+		{'country': 'Spain', 'lat': 40.0000, 'lon': -4.00000 },
+		{'country': 'Germany', 'lat': 51.0000, 'lon': 9.0000 },
+		{'country': 'United Kindom', 'lat': 54.00000, 'lon': -2.0000 },
+		{'country': 'United States', 'lat': 38.0000, 'lon': -97.0000 }
 	];
 
 	var appListElementSelector = '.guest-mode-app-list';

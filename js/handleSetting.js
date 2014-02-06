@@ -58,6 +58,11 @@ var Longitude;
               getRandomLocation();
               console.log('RANDOM          LONG'+Longitude+'     LAT'+Latitude);
            }
+           if (value == 'Off'){
+           	  Latitude = '9999';
+           	  Longitude = '9999';
+           	  console.log('OFF          LONG'+Longitude+'     LAT'+Latitude);
+           }
            var reqList = settings.createLock().set({'location.lon': Longitude});
            reqList.onsuccess = function() {
                console.log('Logitude Set');
@@ -74,8 +79,8 @@ var Longitude;
              console.log('no settings');
              return;
            }
-           Latitude=value[0];
-           Longitude=value[1];
+           Latitude=value.lat;
+           Longitude=value.lon;
            console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
            var reqList = settings.createLock().set({'location.lon': Longitude});
            reqList.onsuccess = function() {
