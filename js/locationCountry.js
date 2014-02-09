@@ -14,10 +14,7 @@ var app = app || {};
 
     var handleSelectedValue = function() {
         var country = countries[this.value];
-        var value = {
-            lat: country.lat,
-            lon: country.lon
-        };
+        var value = country.country;
         var action = this.getAttribute('data-action');
         app.handleSetting(action, value);
     };

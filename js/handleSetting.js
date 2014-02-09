@@ -8,14 +8,6 @@ var Longitude;
      * Define actions here according to the action string that is passed as actionName and a value.
      * "Target" is only used for "secondary" toggles, and will be undefined for "primary" toggles.
      * */
-    getRandomLocation = function() {
-        var minLat = -90,
-            maxLat = 90,
-            minLon = 0,
-            maxLon = 180;
-        Latitude = Math.random()*(maxLat - minLat) + minLat,
-        Longitude = Math.random()*(maxLon - minLon) + minLon;
-    },
     app.handleSetting = function(actionName, value, target, callback) {
 
         console.log('action: ' + actionName);
@@ -54,22 +46,9 @@ var Longitude;
               console.log('no settings');
               return;
            }
-           if (value == 'Random'){
-              getRandomLocation();
-              console.log('RANDOM          LONG'+Longitude+'     LAT'+Latitude);
-           }
-           if (value == 'Off'){
-           	  Latitude = '9999';
-           	  Longitude = '9999';
-           	  console.log('OFF          LONG'+Longitude+'     LAT'+Latitude);
-           }
-           var reqList = settings.createLock().set({'location.lon': Longitude});
+           var reqList = settings.createLock().set({'location': value});
            reqList.onsuccess = function() {
                console.log('Logitude Set');
-           };
-           var reqList = settings.createLock().set({'location.lat': Latitude});
-           reqList.onsuccess = function() {
-               console.log('Latitude Set');
            };
            console.log(actionName+'FUNCTION WORKS:'+value);
         }
@@ -79,18 +58,12 @@ var Longitude;
              console.log('no settings');
              return;
            }
-           Latitude=value.lat;
-           Longitude=value.lon;
-           console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
-           var reqList = settings.createLock().set({'location.lon': Longitude});
+           //console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
+           var reqList = settings.createLock().set({'location.lon': value});
            reqList.onsuccess = function() {
-             console.log('Logitude Set');
+             console.log('Country Set');
            };
-           var reqList = settings.createLock().set({'location.lat': Latitude});
-           reqList.onsuccess = function() {
-             console.log('Latitude Set');
-           };
-           console.log(actionName+'FUNCTION WORKS:'+value);
+           //console.log(actionName+'FUNCTION WORKS:'+value);
         }
         
         
