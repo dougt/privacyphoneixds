@@ -1,5 +1,7 @@
 var app = app || {};
 var ListOfApps = new Array();
+var Latitude;
+var Longitude;
 'use strict';
 (function() {
     /* 
@@ -38,25 +40,33 @@ var ListOfApps = new Array();
             };
             console.log('LIST OF APPS:        '+ListOfApps);
         }
-        if(actionName == 'guestmode-toggle'){
-            /*var settings = window.navigator.mozSettings;
-             if (!settings) {
+        if(actionName == 'locationblur-precision'){
+           var settings = window.navigator.mozSettings;
+           if (!settings) {
+              console.log('no settings');
+              return;
+           }
+           var reqList = settings.createLock().set({'location': value});
+           reqList.onsuccess = function() {
+               console.log('Logitude Set');
+           };
+           console.log(actionName+'FUNCTION WORKS:'+value);
+        }
+        if(actionName == 'locationblur-countryselect'){
+           var settings = window.navigator.mozSettings;
+           if (!settings) {
              console.log('no settings');
              return;
-             }
-             var reqEnabled = settings.createLock().get('kidmode.enabled');
-             reqEnabled.onsuccess = function() {
-             var isBluetoothEnabled = reqEnabled.result['kidmode.enabled'];
-             console.log('AAAAAAAAA: '+isBluetoothEnabled);
-             };
-             var req = settings.createLock().set({'kidmode.enabled': value});
-             req.onsuccess = function() {
-             var isBluetoothEnabled = req.result['kidmode.enabled'];
-             console.log('SET: '+isBluetoothEnabled);
-             };*/
-            console.log(actionName+'FUNCTION WORKS:'+value);
+           }
+           //console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
+           var reqList = settings.createLock().set({'location.lon': value});
+           reqList.onsuccess = function() {
+             console.log('Country Set');
+           };
+           //console.log(actionName+'FUNCTION WORKS:'+value);
         }
-
+        
+        
         if(typeof callback === 'function') {
             callback();
         }
