@@ -1,0 +1,67 @@
+<element name="wizard-intro">
+  <template>
+
+      <x-deck class="wizard-intro">
+          <x-card>
+<!--              <section role="region">
+                  <header>
+                      <h1>Privacy Panel</h1>
+                  </header>
+              </section>-->
+
+              <div class="card-content first">
+                <section data-type="list" class="full-height">
+                  <ul class="multiline large">
+                    <li>
+                      <p>Swipe left or right to navigate.</p>
+                      <p>Swipe up or down to scroll.</p>
+                    </li>
+                  </ul>
+                </section>
+                <img alt="" class="full-width" src="/images/swipe2.png">
+                <section data-type="list" class="full-height">
+                  <ul>
+                    <li>
+                      <div>
+                        <a role="button"
+                           class="recommend"
+                           href="#.wizard-intro#.second">
+                          Start wizard
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+          </x-card>
+          <x-card>
+              <section role="region">
+                  <header>
+                      <h1>Presettings</h1>
+                  </header>
+              </section>
+
+              <div class="card-content second">
+                <section data-type="list" class="full-height">
+                  <ul>
+                    <li>
+                      <p>Choose a user profile.</p>
+                    </li>
+                    <li is="profile-select"></li>
+                    <li>
+                      <div>
+                        <a role="button"
+                           class="recommend"
+                           href="#.wizard">
+                          Start wizard
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+          </x-card>
+      </x-deck>
+
+  </template>
+</element>
