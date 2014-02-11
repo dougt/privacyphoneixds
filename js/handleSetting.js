@@ -46,7 +46,8 @@ var Longitude;
               console.log('no settings');
               return;
            }
-           var reqList = settings.createLock().set({'location': value});
+           if (value != 'Country')
+           	var reqList = settings.createLock().set({'location': value});
            reqList.onsuccess = function() {
                console.log('Logitude Set');
            };
@@ -61,9 +62,9 @@ var Longitude;
            //console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
            var reqList = settings.createLock().set({'location.lon': value});
            reqList.onsuccess = function() {
-             console.log('Country Set');
+             console.log('Country Set to :'+value);
            };
-           //console.log(actionName+'FUNCTION WORKS:'+value);
+           console.log(actionName+'   FUNCTION WORKS:   '+value);
         }
         
         
