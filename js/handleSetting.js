@@ -15,7 +15,19 @@ var Longitude;
         if(target != undefined) {
             console.log('target: ' + target);
         }
-
+		if(actionName == 'guestmode-togglefeature'){
+			var settings = window.navigator.mozSettings;
+            if (!settings) {
+                console.log('no settings');
+                return;
+            }
+      	    var sett = target+'.enabled';
+            var reqList = settings.createLock().set({sett: value});
+            reqList.onsuccess = function() {
+                var isBluetoothEnabled = reqList.result[sett];
+                console.log(target+'   ENABLE');
+            };
+		}
         if(actionName == 'guestmode-toggleapp'){
             if (value==false){
                 if(ListOfApps.indexOf(target)<0){
