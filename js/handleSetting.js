@@ -49,7 +49,6 @@ var Longitude;
            reqList.onsuccess = function() {
                console.log('Logitude Set');
            };
-           console.log(actionName+'FUNCTION WORKS:'+value);
         }
         if(actionName == 'locationblur-countryselect'){
            var settings = window.navigator.mozSettings;
