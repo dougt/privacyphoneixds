@@ -23,10 +23,9 @@ var app = app || {};
     app.locationBlur = {
 
         init: function() {
-            var locationBlurForm = document.querySelector('.locationBlurSettings');
-            checkboxes = locationBlurForm.getElementsByTagName('input');
-            for(var i in checkboxes) {
-                var checkbox = checkboxes.item(i);
+            checkboxes = document.querySelectorAll('.locationBlurSettings input');
+            for(var i = 0; i < checkboxes.length; ++i) {
+                var checkbox = checkboxes[i];
                 checkbox.addEventListener('click', app.locationBlur.setBlurLevel);
             }
             locationFormDialog = document.getElementById('locationblur-locationpickerdialog');
