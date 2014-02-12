@@ -72,7 +72,7 @@
             <ul class="actions">
               <li>
                 <a id="what-can-you-do"
-                   href="#.wizard-intro"
+                   href="#.wizard"
                    role="button"
                    class="recommend">
                   Guide me through the settings
@@ -88,11 +88,61 @@
         </div>
       </x-card>
 
-      <x-card is="wizard-intro"></x-card>
-
       <x-card>
         <x-slidebox class="wizard">
           <x-slides>
+            <x-slide>
+  <!--              <section role="region">
+                    <header>
+                        <h1>Privacy Panel</h1>
+                    </header>
+                </section>-->
+
+                <div class="card-content first">
+                  <section data-type="list" class="full-height">
+                    <ul class="multiline large">
+                      <li>
+                        <p>Swipe left or right to navigate.</p>
+                        <p>Swipe up or down to scroll.</p>
+                      </li>
+                    </ul>
+                  </section>
+                  <img alt="" class="full-width" src="/images/swipe2.png">
+                </div>
+            </x-slide>
+            <x-slide>
+                <section role="region">
+                    <header>
+                        <h1>Presettings</h1>
+                    </header>
+                </section>
+
+                <div class="card-content second">
+                  <section data-type="list" class="full-height">
+                    <ul class="multiline large">
+                      <li>
+                        <p>Choose a preset profile</p>
+                        <p>If you want, you can always choose a preset profile created by the people you trust.</p>
+                        <p is="profile-select"></p>
+                      </li>
+                      <li>
+                        <p>Go back to the privacy panel</p>
+                        <p>You can choose a profile and go directly to the Privacy Panel or swipe to start the tour</p>
+                        <div>
+                          <a role="button"
+                             class="recommend"
+                             href="#.settings-panel">
+                            Skip tour
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <p>Swipe to start the tour</p>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+            </x-slide>
             <x-slide is="find-my-fox"></x-slide>
             <x-slide is="remote-wipe"></x-slide>
             <x-slide is="location-blur"></x-slide>
