@@ -150,3 +150,6 @@ ul li#brightness-manual > label input[type="range"] {
   display: inline;
 }
 
+.full-width {
+    width: 100%;
+}
