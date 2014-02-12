@@ -7,7 +7,11 @@ var app = app || {};
 		{'country': 'Spain', 'lat': 40.0000, 'lon': -4.00000 },
 		{'country': 'Germany', 'lat': 51.0000, 'lon': 9.0000 },
 		{'country': 'United Kindom', 'lat': 54.00000, 'lon': -2.0000 },
-		{'country': 'United States', 'lat': 38.0000, 'lon': -97.0000 }
+		{'country': 'United States', 'lat': 38.0000, 'lon': -97.0000 },
+		{'country': 'Australia', 'lat': -35.28, 'lon': 149.13 },
+		{'country': 'Belarus', 'lat': 53.90, 'lon':  27.57},	
+		{'country': 'Greece', 'lat': 37.98, 'lon':  23.72},		
+		{'country': 'Peru', 'lat': -12.04, 'lon':  -77.03}
 	];
 
 	var appListElementSelector = '.guest-mode-app-list';
