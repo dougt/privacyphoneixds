@@ -322,21 +322,25 @@ form[role="search"] p textarea {
 }
 
 .settings-panel [data-type="list"] aside.icon,
-.settings-panel .app-permissions [data-type="list"] aside img {
+.app-permissions [data-type="list"] aside.icon {
+    background-color: transparent;
+    margin-left: 6px;
     margin-right: 6px;
 }
 
-.settings-panel [data-type="list"] aside.icon {
-    background-color: transparent;
-    margin-left: 6px;
-}
-
-.settings-panel .app-permissions [data-type="list"] aside.icon {
+.app-permissions [data-type="list"] aside.icon {
     margin-right: 17px;
 }
 
-.settings-panel .app-permissions [data-type="list"] aside ~ p {
+.app-permissions [data-type="list"] aside ~ p {
     margin-left: 53px;
+}
+
+.settings-panel ul li aside img,
+.app-permissions [data-type="list"] aside img {
+    max-height: 42px;
+    max-width: 42px;
+    margin-top: 1rem;
 }
 
 .bottom-description {
