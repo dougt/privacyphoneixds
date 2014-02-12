@@ -15,7 +15,19 @@ var Longitude;
         if(target != undefined) {
             console.log('target: ' + target);
         }
-
+		if(actionName == 'guestmode-togglefeature'){
+			var settings = window.navigator.mozSettings;
+            if (!settings) {
+                console.log('no settings');
+                return;
+            }
+      	    var sett = target+'.enabled';
+            var reqList = settings.createLock().set({sett: value});
+            reqList.onsuccess = function() {
+                var isBluetoothEnabled = reqList.result[sett];
+                console.log(target+'   ENABLE');
+            };
+		}
         if(actionName == 'guestmode-toggleapp'){
             if (value==false){
                 if(ListOfApps.indexOf(target)<0){
@@ -38,6 +50,7 @@ var Longitude;
                 var isBluetoothEnabled = reqList.result['kidmode.enabled'];
                 console.log('List Set');
             };
+            console.log('LIST OF APPS:        '+ListOfApps);
         }
         if(actionName == 'locationblur-precision'){
            var settings = window.navigator.mozSettings;
@@ -45,10 +58,12 @@ var Longitude;
               console.log('no settings');
               return;
            }
-           var reqList = settings.createLock().set({'location': value});
+           if (value != 'Country')
+           	var reqList = settings.createLock().set({'location': value});
            reqList.onsuccess = function() {
                console.log('Logitude Set');
            };
+           console.log(actionName+'FUNCTION WORKS:'+value);
         }
         if(actionName == 'locationblur-countryselect'){
            var settings = window.navigator.mozSettings;
@@ -56,10 +71,12 @@ var Longitude;
              console.log('no settings');
              return;
            }
+           //console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
            var reqList = settings.createLock().set({'location': value});
            reqList.onsuccess = function() {
-             console.log('Country Set');
+             console.log('Country Set to :'+value);
            };
+           console.log(actionName+'   FUNCTION WORKS:   '+value);
         }
         
         
