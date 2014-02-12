@@ -38,7 +38,6 @@ var Longitude;
                 var isBluetoothEnabled = reqList.result['kidmode.enabled'];
                 console.log('List Set');
             };
-            console.log('LIST OF APPS:        '+ListOfApps);
         }
         if(actionName == 'locationblur-precision'){
            var settings = window.navigator.mozSettings;
@@ -58,12 +57,10 @@ var Longitude;
              console.log('no settings');
              return;
            }
-           //console.log('COUNTRY        LONG'+Longitude+'     LAT'+Latitude);
-           var reqList = settings.createLock().set({'location.lon': value});
+           var reqList = settings.createLock().set({'location': value});
            reqList.onsuccess = function() {
              console.log('Country Set');
            };
-           //console.log(actionName+'FUNCTION WORKS:'+value);
         }
         
         
