@@ -24,3 +24,7 @@
     position: absolute;
     z-index: 10;
 }
+
+.wizard .card-content.find-my-fox .setting.remotewipe {
+    display: none;
+}
