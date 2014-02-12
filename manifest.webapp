@@ -1,5 +1,5 @@
 {
-  "name": "Fox Privacy",
+  "name": "Privacy Panel",
   "description": "Privacy Settings",
   "developer": {
     "name": "IXDS",
@@ -29,7 +29,7 @@
   },
   "locales": {
     "en-US": {
-      "name": "Fox Privacy",
+      "name": "Privacy Panel",
       "description": "Privacy Settings"
     }
   },

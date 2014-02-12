@@ -1,5 +1,5 @@
 {
-  "name": "Fox Privacy",
+  "name": "Privacy Panel",
   "package_path": "http://192.168.2.51:8080/package.zip",
   "developer": {
     "name": "IXDS",
@@ -16,7 +16,7 @@
   },
   "locales": {
     "en-US": {
-      "name": "Fox Privacy",
+      "name": "Privacy Panel",
       "description": "Privacy Settings"
     }
   },
