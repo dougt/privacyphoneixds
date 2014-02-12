@@ -27,24 +27,34 @@ var app = app || {};
                     current_slide = app.settings.slides[0];
                 }
                 var current_slide_index = Array.prototype.indexOf.call(app.settings.slides, current_slide);
-                var next_slide_index = (current_slide_index + direction) % app.settings.slides.length;
-                console.log(current_slide_index + " " + next_slide_index);
-                var next_slide = app.settings.slides[next_slide_index];
-                var current_topic = current_slide.querySelector(".topic");
-                var next_topic = next_slide.querySelector(".topic");
+                var next_slide_index = current_slide_index + direction;
+                console.log('current slide: ' + current_slide_index + '; next slide: ' + next_slide_index);
+                if(next_slide_index >= 0 && next_slide_index < app.settings.slides.length) {
+                    var next_slide = app.settings.slides[next_slide_index];
+                    var current_topic = current_slide.querySelector(".topic");
+                    var next_topic = next_slide.querySelector(".topic");
 
-                if (current_topic && next_topic) {
-                    if (app.settings.is_topic_info_mode(current_topic)) {
-                        console.log('info '+next_topic.className);
-                        app.settings.topic_info_mode_scroll(next_topic);
+                    if (current_topic && next_topic) {
+                        if (app.settings.is_topic_info_mode(current_topic)) {
+                            console.log('info '+next_topic.className);
+                            app.settings.topic_info_mode_scroll(next_topic);
+                        }
+                        else {
+                            console.log('app.settings '+next_topic.className);
+                            app.settings.topic_app.settings_mode_scroll(next_topic);
+                        }
+                    }
+
+                    app.settings.slidebox.slideTo(next_slide_index);
+                }
+                else {
+                    if(next_slide_index < 0) {
+                        console.log('Beggining of the slidebox. Can\'t go to previous slide');
                     }
                     else {
-                        console.log('app.settings '+next_topic.className);
-                        app.settings.topic_app.settings_mode_scroll(next_topic);
+                        console.log('End of the slidebox. Can\'t go to next slide');
                     }
                 }
-
-                app.settings.slidebox.slideTo(next_slide_index);
 
             });
 
