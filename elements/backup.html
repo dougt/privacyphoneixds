@@ -1,0 +1,50 @@
+<element name="backup">
+  <template>
+
+    <section role="region">
+      <header>
+        <a href="#.settings-panel#.settings-panel-list">
+          <span class="icon icon-back">back</span>
+        </a>
+        <menu type="toolbar">
+          <!-- <button class="explain"><span>info</span></button> -->
+        </menu>
+        <h1>Backup</h1>
+      </header>
+    </section>
+
+    <div class="card-content topic backup">
+
+      <div class="topic-top setting backup off">
+        <div class="topic-switch">
+          <div class="title">Backup</div>
+          <div class="setting-toggle" data-action="backup-toggle"><div></div></div>
+        </div>
+      </div>
+
+      <section data-type="list" class="full-height">
+
+        <ul class="settings-list large">
+          <li class="border-bottom-none">
+            <p>
+              Backup service
+            </p>
+            <p>
+              Use a backup service of your choice
+            </p>
+            <span class="button icon icon-dialog select-dirt-hack">
+              <select name="backup-service">
+                <option value="0" selected="selected">Dropbox</option>
+                <option value="1">Tresorit</option>
+                <option value="2">DT Server</option>
+                <option value="3">Local</option>
+              </select>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+  </template>
+</element>
