@@ -381,7 +381,7 @@ section.bottom-description ul.large li.setting p
 .tabbed > header > span.tab {
     display: block;
     float: left;
-    margin-right: 1rem;
+    margin-right: 3rem;
     opacity: 0.5;
 }
 .tabbed > ul.tab {
