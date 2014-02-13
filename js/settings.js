@@ -2,7 +2,13 @@ var app = app || {};
 
 (function() {
     app.settings = {
-        init: function() {
+        init: function()
+        {
+            document.getElementById('retake-tour').addEventListener('click', function()
+            {
+                app.settings.reset();
+            }, false);
+
             app.settings.rootDeck = document.querySelector("x-deck");
             app.settings.slidebox = document.querySelector("x-slidebox.wizard");
             app.settings.slides = app.settings.slidebox.querySelector("x-slides").children;
@@ -68,6 +74,20 @@ var app = app || {};
                 setting_toggles[i].addEventListener('click', setting_toggle_click);
             }
 
+        },
+
+        reset: function()
+        {
+            app.settings.slidebox = document.querySelector("x-slidebox.wizard");
+            app.settings.slides = app.settings.slidebox.querySelector("x-slides").children;
+
+            for(i=0; i<app.settings.slides.length; i++)
+            {
+                app.settings.slides[i].selected = false;
+            }
+            app.settings.slides[0].selected = true;
+
+            app.settings.slidebox.slideTo(0);
         },
 
         real_offset: function(element, container) {
