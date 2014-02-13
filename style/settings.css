@@ -336,6 +336,10 @@ form[role="search"] p textarea {
     margin-left: 53px;
 }
 
+.app-permissions [data-type="list"] p.stamp span {
+    float: right;
+}
+
 .settings-panel ul li aside img,
 .app-permissions [data-type="list"] aside img {
     max-height: 42px;
