@@ -6,7 +6,7 @@ var app = app || {};
 	[
 		{'country': 'Spain', 'lat': 40.0000, 'lon': -4.00000 },
 		{'country': 'Germany', 'lat': 51.0000, 'lon': 9.0000 },
-		{'country': 'United Kindom', 'lat': 54.00000, 'lon': -2.0000 },
+		{'country': 'United Kingdom', 'lat': 54.00000, 'lon': -2.0000 },
 		{'country': 'United States', 'lat': 38.0000, 'lon': -97.0000 },
 		{'country': 'Australia', 'lat': -35.28, 'lon': 149.13 },
 		{'country': 'Belarus', 'lat': 53.90, 'lon':  27.57},	
