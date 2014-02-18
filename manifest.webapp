@@ -22,10 +22,10 @@
      }
   },
   "icons": {
-    "30": "/icons/icon_privacy_panel_icon_2.png",
-    "60": "/icons/icon_privacy_panel_icon_2.png",
-    "90": "/icons/icon_privacy_panel_icon_2.png",
-    "128": "/icons/icon_privacy_panel_icon_2_large.png"
+    "30": "/icons/appicon_30.png",
+    "60": "/icons/appicon_60.png",
+    "90": "/icons/appicon_90.png",
+    "128": "/icons/appicon_128.png"
   },
   "locales": {
     "en-US": {
